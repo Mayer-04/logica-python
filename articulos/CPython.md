@@ -13,15 +13,15 @@ CPython está escrita principalmente en el `lenguaje C`, de ahí su nombre **("C
 
 Cuando ejecutas un archivo `.py`, no se convierte directamente en código máquina ni en código C. El proceso funciona así:
 
-1. El código Python se compila a un formato intermedio llamado bytecode.
-2. Ese bytecode es luego interpretado por la máquina virtual de CPython, que está escrita en C.
+1. El código Python se compila a un formato intermedio llamado **bytecode**.
+2. Ese **bytecode** es luego interpretado por la máquina virtual de CPython, que está escrita en C.
 
 > [!IMPORTANT]
 > Aunque Python se ejecuta gracias a un motor en C, tu código no se transforma en C durante la ejecución.
 
 ## ¿Es CPython la versión más rápida?
 
-No necesariamente. CPython es la más estable y compatible, pero existen otras versiones enfocadas en el rendimiento, como:
+No necesariamente. **CPython** es la más estable y compatible, pero existen otras versiones enfocadas en el rendimiento, como:
 
 - `PyPy`, que utiliza técnicas de compilación JIT (_Just-In-Time_) para ejecutar programas más rápido en muchos casos.
 

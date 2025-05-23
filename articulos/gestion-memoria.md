@@ -1,4 +1,4 @@
-# Gestión de la Memoria en Python
+# Gestión de la memoria en Python
 
 La gestión de memoria en Python está diseñada para ser automática y eficiente. El `intérprete` se encarga de la asignación y liberación de memoria a través de su propio `administrador de memoria`, lo que significa que los desarrolladores no tienen que preocuparse directamente por la administración de recursos de memoria
 
@@ -12,20 +12,20 @@ El montón es una parte de la `memoria` de una computadora donde se almacenan da
 - Cuando creas un objeto o una estructura de datos como una lista o un diccionario en Python, estos no tienen un tamaño fijo (pueden crecer o reducirse), por lo que se almacenan en el montón.
 - El montón es más lento que la `pila`.
 
-### Montón Privado
+### Montón privado
 
 El `montón privado` de Python es una porción específica (reservada) de la memoria que solo el `intérprete de Python` puede gestionar.
 Cuando trabajas con objetos en Python **(como listas, diccionarios, cadenas, etc.)**, estos se almacenan en ese montón privado. Este montón es "privado" en el sentido de que, como desarrollador, no puedes controlarlo directamente
 
 Esto significa que, aunque estés creando y usando objetos en tu código Python, el sistema interno del lenguaje es el que decide cómo y dónde se almacenan esos datos en el montón privado.
 
-## Gestión Dinámica de Memoria en Python
+## Gestión dinámica de memoria en Python
 
-1. **Reutilización de Memoria:** Python optimiza el uso de recursos reutilizando espacios de memoria cuando es posible.
-2. **Asignación Anticipada:** Se reserva memoria por adelantado en lugar de hacerlo solo cuando es necesario.
-3. **Almacenamiento en Caché:** Se mantienen datos en memoria temporalmente para acelerar el acceso futuro.
-4. **Solicitud de Memoria:** Python solicita memoria al sistema operativo según sea necesario.
-5. **Asignadores de Objetos:** Python utiliza asignadores específicos para diferentes tipos de objetos (enteros, cadenas, tuplas, etc.), optimizando el rendimiento y el uso de memoria según el tipo de datos.
+1. **Reutilización de memoria:** Python optimiza el uso de recursos reutilizando espacios de memoria cuando es posible.
+2. **Asignación anticipada:** Se reserva memoria por adelantado en lugar de hacerlo solo cuando es necesario.
+3. **Almacenamiento en caché:** Se mantienen datos en memoria temporalmente para acelerar el acceso futuro.
+4. **Solicitud de memoria:** Python solicita memoria al sistema operativo según sea necesario.
+5. **Asignadores de objetos:** Python utiliza asignadores específicos para diferentes tipos de objetos (enteros, cadenas, tuplas, etc.), optimizando el rendimiento y el uso de memoria según el tipo de datos.
 
 **Ejemplos:**
 

@@ -10,7 +10,7 @@ cantidad = 5
 ```
 
 1. **Evaluación:** Python primero evalúa la `expresión` a la derecha del signo igual (=), en este caso, el número 5.
-2. **Creación del Objeto:** Dado que 5 es un número entero, Python crea un `objeto de tipo int` que almacena este valor.
+2. **Creación del objeto:** Dado que 5 es un número entero, Python crea un `objeto de tipo int` que almacena este valor.
 3. **Asignación:** Este `objeto int` que contiene el valor 5 se almacena en una ubicación específica de la memoria. Luego, Python asigna la variable cantidad para que apunte a esa dirección de memoria.
 4. Cuando decimos que cantidad `apunta` a una dirección de memoria, simplemente estamos diciendo que `cantidad` es una `etiqueta` o nombre que señala dónde está guardado el valor 5 en la memoria de la computadora.
 5. **Reutilización:** Si asignas el valor 5 a otra variable, Python podría reutilizar el objeto existente en lugar de crear uno nuevo. Esto es posible gracias a una técnica llamada "interning" o "internado" en Python.
@@ -57,12 +57,12 @@ print(id(cuidades2))  # 2090137619408
 
 Cada vez que creas un objeto **(como un número, una cadena, una lista, etc.)**, Python necesita saber cuántas variables o `referencias` están apuntando a ese objeto. Este conteo ayuda a determinar cuándo un objeto ya no es necesario y puede ser eliminado para liberar memoria.
 
-**Funcionamiento del Contador de Refencias:**
+**Funcionamiento del contador de referencias:**
 
 1. **Inicialización:** Al crear un nuevo objeto, Python establece su contador de referencias en 1.
 2. **Aumento:** Cada vez que se crea una nueva referencia a este objeto (por ejemplo, al asignar el objeto a una nueva variable), el contador aumenta.
 3. **Disminución:** Si una referencia al objeto se elimina (por ejemplo, al reasignar la variable o al usar `del`), el contador disminuye.
-4. **Recolección de Basura:** Cuando el contador de referencias llega a 0, significa que ninguna variable o referencia está apuntando a ese objeto. Python lo considera "innecesario" y libera la memoria que estaba ocupando 1.
+4. **Recolección de basura:** Cuando el contador de referencias llega a 0, significa que ninguna variable o referencia está apuntando a ese objeto. Python lo considera "innecesario" y libera la memoria que estaba ocupando 1.
 
 **Ejemplo:**
 

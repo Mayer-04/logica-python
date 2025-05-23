@@ -1,6 +1,6 @@
-# Iterables e Iteradores
+# Iterables e iteradores
 
-## Conceptos Claves
+## Conceptos claves
 
 - **Colección:** Es cualquier `agrupación` de elementos. No necesita cumplir reglas estrictas; los elementos pueden estar o no ordenados, y es posible tener varios elementos idénticos dentro de la colección.
 - **Conjunto:** Al igual que una colección, un conjunto agrupa varios elementos, pero de manera más estricta. Los elementos de un conjunto son únicos (no hay duplicados), y no necesitan estar ordenados.
@@ -20,7 +20,7 @@ Un iterable es cualquier colección de elementos que se puede `recorrer` uno por
 - **Diccionarios:** En Python, los diccionarios permiten acceder a sus elementos usando **claves** en lugar de índices. Estas claves deben ser de un **tipo de dato inmutable (como números, cadenas, o tuplas)**, y están asociadas a valores. Puedes iterar sobre las claves, valores o ambos.
 - **Sets:** Los sets son colecciones no ordenadas de elementos únicos. No tienen índices porque **no garantizan un orden**, pero puedes verificar si un elemento está presente en el set con el **operador de pertenencia** `elemento in set`, y también puedes recorrerlos usando un ciclo `for`.
 
-## Index o Indexado: Acceso a Elementos por Posición
+## Index o Indexado: Acceso a elementos por posición
 
 Un índice es un **número** que indica la posición de un elemento dentro de una estructura de datos (colección o conjunto de datos).
 
@@ -65,6 +65,6 @@ Un iterador es una herramienta o mecanismo que nos permite `movernos` por los el
 - El iterador mantiene el estado de dónde te encuentras en el recorrido. Así, sabe qué elemento devolver a continuación.
 - Cuando llegas al final del iterable, el iterador te indica que ya no hay más elementos para recorrer.
 
-### Los Iteradores en la Vida Real
+### Los iteradores en la vida real
 
 Imagina una fila de personas esperando para ingresar a un evento. La _fila_ es un `iterable`, ya que puedes ir pasando por cada persona una por una. El `iterador` sería como un _guía_ que lleva a las personas una por una hacia la entrada del evento. Este guía "recuerda" quién es la siguiente persona en la fila, y sigue avanzando hasta que ya no quedan más personas por pasar.
