@@ -2,12 +2,13 @@
 * Variables y Constantes en Python
 -----------------------------------
 - En Python, no es necesario utilizar `palabras reservadas` para declarar variables.
-- La convención de nombres para las variables en Python es usar snake_case (minúsculas con guiones bajos).
+- La convención de nombres para las variables en Python es usar `snake_case` (minúsculas con guiones bajos).
 - Las variables pueden ser vistas como etiquetas que referencian valores.
 - Cuando defines una variable en Python, estás creando una referencia a un `objeto` en la memoria.
 - Los nombres de las variables deben ser descriptivos y cortos para mejorar la legibilidad del código.
 
-Palabras reservadas: Son palabras que utiliza Python las cuales no se pueden usar como nombres de variables.
+Palabras reservadas: Son palabras que utiliza Python para su funcionamiento interno, 
+así que no se pueden usar como nombres de variables.
 """
 
 # Declaración de variables
