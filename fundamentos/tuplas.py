@@ -10,6 +10,7 @@
 - Son más eficientes en términos de memoria y tiempo de ejecución en comparación con las listas.
 - Si necesitas una estructura inmutable con un tamaño fijo y sabes los valores desde el principio,
 una tupla es apropiada.
+- Se pueden indexar y rebanar como las listas.
 
 Métodos y operaciones comunes en tuplas:
 ----------------------------------------
