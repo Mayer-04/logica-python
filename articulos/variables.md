@@ -9,11 +9,11 @@ En Python, una variable no es más que un `nombre` que hace referencia a un `obj
 cantidad = 5
 ```
 
-1. **Evaluación:** Python primero evalúa la `expresión` a la derecha del signo igual (=), en este caso, el número 5.
-2. **Creación del objeto:** Dado que 5 es un número entero, Python crea un `objeto de tipo int` que almacena este valor.
-3. **Asignación:** Este `objeto int` que contiene el valor 5 se almacena en una ubicación específica de la memoria. Luego, Python asigna la variable cantidad para que apunte a esa dirección de memoria.
-4. Cuando decimos que cantidad `apunta` a una dirección de memoria, simplemente estamos diciendo que `cantidad` es una `etiqueta` o nombre que señala dónde está guardado el valor 5 en la memoria de la computadora.
-5. **Reutilización:** Si asignas el valor 5 a otra variable, Python podría reutilizar el objeto existente en lugar de crear uno nuevo. Esto es posible gracias a una técnica llamada "interning" o "internado" en Python.
+1. **Evaluación:** Python primero evalúa la `expresión` a la derecha del signo igual **(=)**, en este caso, el número 5.
+2. **Creación del objeto:** Dado que 5 es un número entero, Python crea un `objeto de tipo int` (si no existe ya, por el _interning_) que almacena este valor.
+3. **Asignación:** Este `objeto int` que contiene el valor 5 se almacena en una ubicación específica de la memoria. Luego, Python asigna la variable **cantidad** para que apunte a esa dirección de memoria.
+4. Cuando decimos que **cantidad** `apunta` a una dirección de memoria, simplemente estamos diciendo que **cantidad** es una `etiqueta` o nombre que señala dónde está guardado el valor 5 en la memoria de la computadora.
+5. **Reutilización:** Si asignas el valor 5 a otra variable, Python podría reutilizar el objeto existente en lugar de crear uno nuevo. Esto es posible gracias a una técnica llamada **"interning"** o **"internado"** en Python.
 
 Esto significa que las variables en Python no contienen los datos directamente, sino que actúan como `punteros` a objetos en memoria.
 
