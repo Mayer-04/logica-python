@@ -1,10 +1,10 @@
 # ¿Qué es CPython?
 
-`CPython` es la implementación oficial y más ampliamente utilizada del lenguaje de programación Python. Está desarrollada y mantenida por la _Python Software Foundation_.
+`CPython` es la implementación oficial y más ampliamente utilizada del lenguaje de programación Python. Está desarrollada y mantenida por la **Python Software Foundation**.
 
 ## ¿Qué significa CPython?
 
-CPython está escrita principalmente en el `lenguaje C`, de ahí su nombre **("C" + "Python")**. Esto incluye:
+CPython está escrita principalmente en el `lenguaje de programación C`, de ahí su nombre **("C" + "Python")**. Esto incluye:
 
 - El intérprete que ejecuta los programas (código) escritos en Python.
 - Muchos de los módulos estándar, aunque algunos otros están escritos en Python puro.
