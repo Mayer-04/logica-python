@@ -9,6 +9,6 @@ Comentario de varias líneas o multilínea
 
 
 """ 
-Cuando definimos una función o una clase y queremos definir que hace esa función o clase,
+Cuando definimos una función o una clase y queremos definir o documentar lo que hace esa función o clase,
 usamos el Document String (docstring) dentro de la función o la clase.
 """
