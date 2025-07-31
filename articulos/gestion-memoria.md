@@ -4,7 +4,7 @@ La gestión de memoria en Python está diseñada para ser automática y eficient
 
 Todos los objetos y estructuras de datos de Python se almacenan en un `montón privado`.
 
-## Montón
+## Montón (Heap)
 
 El montón es una parte de la `memoria` de una computadora donde se almacenan datos que no tienen un tamaño fijo o que se crean **dinámicamente** durante la ejecución de un programa.
 
