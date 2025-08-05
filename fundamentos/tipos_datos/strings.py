@@ -8,8 +8,8 @@ En Python, las cadenas son inmutables, lo que significa que una vez creada una c
 - Las cadenas son accesibles por `índices` y pueden ser `iteradas`.
 - Puedes acceder a un carácter específico utilizando corchetes `[]` y un índice.
 - Si intentas acceder a un índice fuera del rango de la cadena, Python nos dara un error `IndexError`.
-- El slicing en strings está diseñado para ser seguro y no provocar errores al intentar acceder a índices fuera del rango
-de la cadena.
+- El slicing en strings está diseñado para ser seguro y no provocar errores al intentar acceder a índices
+fuera del rango de la cadena.
 
 Algunas características de las cadenas:
 ---------------------------------------
@@ -26,8 +26,8 @@ Algunas características de las cadenas:
 """
 
 # Creando una cadena de caracteres usando el contructor `str()`
-mi_nombre = str("Mayer")
-print(f"Hola soy {mi_nombre}")
+nombre = str("Mayer")
+print(f"Hola, mi nombre es {nombre}")
 
 # Creación de cadenas
 # Se pueden crear usando comillas dobles o simples.
