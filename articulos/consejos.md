@@ -29,7 +29,7 @@ quit
 
 ## Lenguaje interpretado o de script
 
-El código Python que escribimos no se convierte directamente en instrucciones que la computadora pueda entender **(lenguaje máquina)**. En lugar de eso, un programa especial llamado `intérprete de Python` traduce primero el código fuente a un formato intermedio llamado `bytecode`, que es una representación más eficiente que el código fuente original.
+El código Python que escribimos no se convierte directamente en instrucciones que la computadora pueda entender **(lenguaje máquina)**. En lugar de eso, un programa especial llamado `intérprete de Python` traduce primero el **código fuente** a un formato intermedio llamado `bytecode`, que es una representación más eficiente que el código fuente original.
 
 - El intérprete de Python **(La máquina virtual de Python _PVM_)** ejecuta este `bytecode`. Es decir, el intérprete lee el `bytecode` y lo traduce a instrucciones que la computadora puede entender y ejecutar.
 - Los archivos `.pyc` se generan automáticamente y se guardan en un directorio especial llamado `_pycache_`, en la misma carpeta donde está tu archivo `.py` original. Esto acelera la ejecución del código, ya que evita recompilar el bytecode cada vez que se ejecuta el programa.
@@ -38,7 +38,7 @@ El código Python que escribimos no se convierte directamente en instrucciones q
 
 Los objetos en Python se pueden clasificar en dos categorías basadas en su capacidad para cambiar:
 
-1. **Mutables:** Estos objetos pueden cambiar su valor después de haber sido creados. Cuando un objeto mutable se pasa como argumento a una función, se pasa por referencia, lo que significa que las modificaciones realizadas en la función afectarán al objeto original.
+1. **Mutables:** Estos objetos pueden cambiar su valor después de haber sido creados. Cuando se pasa un objeto mutable como argumento a una función, se pasa **por referencia**, lo que significa que las modificaciones realizadas dentro de la función afectarán al objeto original.
 
 **Algunos objetos mutables son:**
 
@@ -47,7 +47,7 @@ Los objetos en Python se pueden clasificar en dos categorías basadas en su capa
 - set (conjuntos)
 - bytearray
 
-2. **Inmutables:** Estos objetos no pueden cambiar su valor una vez creados. Si se intenta modificar un objeto inmutable, se creará un nuevo objeto en su lugar. Cuando un objeto inmutable se pasa como argumento a una función, se pasa por valor, es decir, la función trabaja con una copia del valor original y no puede modificar el objeto original.
+2. **Inmutables:** Estos objetos no pueden cambiar su valor una vez creados. Si se intenta modificar un objeto inmutable, se **crea un nuevo objeto** en su lugar. Cuando un objeto inmutable se pasa como _argumento_ a una función, se pasa **por valor**, es decir, la función trabaja con una copia del valor original y no puede modificar el objeto original.
 
 **Algunos objetos inmutables son:**
 
@@ -62,7 +62,7 @@ Los objetos en Python se pueden clasificar en dos categorías basadas en su capa
 
 1. En Python, no es necesario terminar cada sentencia con un punto y coma (;).
 2. **Indentación obligatoria:** En lugar de usar llaves `{}` para agrupar bloques de código (como en otros lenguajes), Python utiliza la `indentación`. Por convención, se emplean `4 espacios` por nivel de indentación. Una indentación incorrecta resultará en un error de sintaxis.
-3. **Nombres de variables descriptivos:** Es recomendable utilizar nombres de variables en minúsculas, separando las palabras con guiones bajos `(snake_case).`
+3. **Nombres de variables descriptivos:** Es recomendable utilizar nombres de variables en minúsculas, separando las palabras con guiones bajos (formato `snake_case`).
 4. Puedes multiplicar una cadena por un número para repetirla varias veces con el operador aritmetico `*`:
 
 ```py
@@ -70,8 +70,8 @@ print("Mayer" * 4) # MayerMayerMayerMayer
 ```
 
 5. **Evita comparar tipos diferentes:** Comparar valores de diferentes tipos puede generar errores o comportamientos inesperados. Asegúrate de que los valores sean del mismo tipo antes de compararlos.
-6. **Uso de truthy y falsy:** Al igual que en JavaScript, Python evalúa valores como `True` o `False` en condiciones. Ejemplos de valores `Falsy` incluyen `None`, `0`, `""`, `[]`, `{}`, mientras que cualquier otro valor se considera `Truthy`.
-7. **Conversión implícita en condicionales:** El intérprete de Python convierte `implícitamente` una variable a un booleano cuando se evalúa en una condición if. Esto sucede también en lenguajes como JavaScript.
+6. **Uso de valores truthy y falsy:** Al igual que en lenguajes como JavaScript, Python evalúa ciertos valores como `True` o `False` en expresiones condicionales. Algunos ejemplos de valores _falsy_ son `None`, `0`, `""`, `[]` y `{}`; en cambio, cualquier otro valor se considera _truthy_.
+7. **Conversión implícita en condicionales:** El intérprete ifde Python convierte implícitamente una variable a un valor booleano cuando se evalúa dentro de una condición ``. Esto también ocurre en lenguajes como JavaScript.
 8. **Modificación de listas durante la iteración:** Modificar una lista mientras la recorres puede causar comportamientos inesperados. Para evitarlo, trabaja con una copia de la lista:
 
 ```py
@@ -94,8 +94,8 @@ from math import *
 
 ## Buenas prácticas de programación en Python
 
-1. **Uso de funciones incorporadas (Built-ins):** Python ofrece muchas funciones incorporadas que pueden simplificar tu código, como **len()**, **sum()**, **max()**, **min()**, entre otras. Siempre que sea posible, utiliza estas funciones en lugar de reinventar la rueda.
-2. **Comprensión de listas y comprensión de generadores:** Utiliza comprensión de listas y generadores para crear listas, diccionarios, o conjuntos de manera concisa y eficiente:
+1. **Uso de funciones incorporadas (Built-ins):** Python ofrece muchas funciones incorporadas que pueden simplificar tu código, como `len()`, `sum()`, `max()`, `min()`, entre otras. Siempre que sea posible, utiliza estas funciones en lugar de reinventar la rueda.
+2. **Comprensión de listas y comprensión de generadores:** Utiliza comprensión de listas y generadores para crear listas, diccionarios, o conjuntos de manera concisa y eficiente.
 
 ### List comprehension
 
