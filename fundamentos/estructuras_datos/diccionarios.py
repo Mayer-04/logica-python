@@ -1,16 +1,24 @@
 """
 * Diccionarios en Python:
 -------------------------
-- Un diccionario es una estructura de datos que almacena pares clave-valor, donde cada clave es única.
-- Se define entre llaves {} y puede contener elementos de cualquier tipo de dato 
-(strings, enteros, listas, otros diccionarios, etc.).
+Un diccionario es una estructura de datos que almacena información en pares `clave-valor`.
+Es ideal para representar relaciones entre elementos.
+
+📝 NOTAS:
+- Las claves en un diccionario deben ser únicas e inmutables (por ejemplo: strings, números, tuplas).
+- Los valores pueden ser de cualquier tipo de dato (incluso otros diccionarios).
+
+- Se definen con llaves: `{}`.
+- En un diccionario, se accede o se modifica un valor utilizando su clave entre `corchetes`,
+  por ejemplo: mi_dict["nombre"] = "Mayer".
 - Los diccionarios son mutables, lo que significa que puedes agregar,
 eliminar o modificar pares clave-valor después de su creación.
 - Las claves de los diccionarios deben ser inmutables. Pueden ser de tipos numéricos, strings, tuplas, etc.
 - Se pueden anidar, es decir, un diccionario puede contener otros diccionarios como valores.
 - Los diccionarios son iterables, permitiendo recorrer sus claves, valores o ambos utilizando bucles como `for`.
-- Desde Python 3.7 en adelante, los diccionarios preservan el orden de inserción, esto significa que los 
-elementos aparecen en el mismo orden que fueron agregados.
+- Desde `Python 3.7`, los diccionarios preservan el orden de inserción,
+  lo que significa que los elementos aparecerán en el orden en que fueron agregados.
+
 
 Operaciones comunes con diccionarios:
 -------------------------------------

@@ -1,16 +1,20 @@
 """
 * Tuplas en Python: Secuencia
 ------------------------------
-- Una tupla es una colección ordenada e inmutable de elementos.
-- Las tuplas se definen utilizando paréntesis ().
-- No es posible borrar (ni añadir) un elemento en una tupla, lo que provocará una excepción.
-- Pueden contener elementos de cualquier tipo de datos (enteros, cadenas, listas, etc.).
-- Una vez creada, no se pueden modificar (no se pueden añadir, eliminar o cambiar elementos).
-- Son útiles para almacenar datos que no deben cambiar a lo largo de la ejecución del programa.
+Una tupla es una estructura de datos que representa una colección ordenada e inmutable de elementos.
+
+- Las tuplas se definen utilizando paréntesis: `()`.
+- A diferencia de las listas, las tuplas `no se pueden modificar` una vez creadas:
+  - No se pueden agregar elementos.
+  - No se pueden eliminar elementos.
+  - No se pueden cambiar elementos existentes.
+- Pueden contener datos de cualquier tipo: enteros, cadenas, listas, otras tuplas, etc.
+- Son útiles cuando necesitas garantizar que los datos no se modificarán a lo largo del programa 
+(por ejemplo, coordenadas, configuraciones, claves de diccionario, etc.).
 - Son más eficientes en términos de memoria y tiempo de ejecución en comparación con las listas.
 - Si necesitas una estructura inmutable con un tamaño fijo y sabes los valores desde el principio,
 una tupla es apropiada.
-- Se pueden indexar y rebanar como las listas.
+- Son `indexables` y admiten `slicing` (rebanado), igual que las listas.
 
 Métodos y operaciones comunes en tuplas:
 ----------------------------------------
