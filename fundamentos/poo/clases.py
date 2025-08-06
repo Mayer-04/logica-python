@@ -1,10 +1,10 @@
 """
 * Clases en Python
 -------------------
-- Las clases son los moldes o plantillas que definen los atributos y métodos de un objeto.
+- Las clases son moldes o plantillas que definen los atributos y métodos de un objeto.
 - Las instancias son los objetos creados a partir de una clase.
 - Los objetos son instancias de una clase.
-- Las nombres de las clases por convención se escriben en `PascalCase`.
+- Los nombres de las clases por convención se escriben en `PascalCase`.
 - El parámetro `self` se refiere a la instancia de la clase, es decir, el objeto que se esta creando (el objeto mismo).
 - Cada instancia de la clase tiene un `diccionario de atributos`.
 - Las clases en sí tienen un diccionario que almacena sus atributos y métodos. Con el atributo `__dict__`

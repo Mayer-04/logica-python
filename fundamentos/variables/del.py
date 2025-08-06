@@ -1,14 +1,21 @@
 """
 * Palabra reservada `del`
 --------------------------
-Se utiliza para eliminar una variable o un objeto.
-- Puede aplicarse a variables, elementos de listas, elementos de un diccionario, atributos de objetos, etc.
-- Si no hay otras referencias a esos objetos, se eliminan de la memoria, ayudando a la recolección de basura en Python.
+La palabra clave `del` se utiliza para eliminar variables u objetos en Python.
+
+Puede aplicarse a:
+- Variables
+- Elementos de una lista
+- Claves de un diccionario
+- Atributos de un objeto
+
+Cuando se elimina una referencia y no existen otras que apunten al mismo objeto,
+Python puede liberar esa memoria automáticamente (esto se conoce como recolección de basura).
 """
 
 # Eliminar una variable
 numero = 10
-del numero  # Ahora 'number' ya no existe y si intentas usarla, obtendrás un error.
+del numero  # Ahora 'numero' ya no existe y si intentas usarla, obtendrás un error.
 
 # Eliminar un elemento de una lista
 lista = [1, 2, 3, 4]

@@ -1,13 +1,21 @@
 """
-* Variables y Constantes en Python
+* Variables y constantes en Python
 -----------------------------------
-- En Python, no es necesario utilizar `palabras reservadas` para declarar variables.
-- La convención de nombres para las variables en Python es usar `snake_case` (minúsculas con guiones bajos).
-- Las variables pueden ser vistas como etiquetas que referencian valores.
-- Cuando defines una variable en Python, estás creando una referencia a un `objeto` en la memoria.
-- Los nombres de las variables deben ser descriptivos y cortos para mejorar la legibilidad del código.
+En Python, no es necesario usar palabras clave especiales para declarar una variable.
+Simplemente se asigna un valor a un nombre utilizando el operador `=`.
 
-Palabras reservadas: Son palabras que utiliza Python para su funcionamiento interno, 
+Características de las variables:
+---------------------------------
+- Las variables en Python son `etiquetas` que hacen referencia a objetos en memoria.
+- Cuando asignas un valor a una variable, estás creando una `referencia` al objeto,
+no copiando el valor literalmente.
+- La convención para nombrar variables es usar `snake_case`: minúsculas y guiones bajos para separar palabras.
+  Ejemplo: `mi_variable`, `total_suma`, `contador_items`
+- Los nombres de las variables deben ser `descriptivos` y cortos para mejorar la legibilidad del código.
+- Python tiene `palabras reservadas` (como `for`, `if`, `class`, etc.)
+que no pueden usarse como nombres de variables, ya que forman parte de la sintaxis del lenguaje.
+
+Palabras reservadas: Son palabras (términos) que utiliza Python para su funcionamiento interno,
 así que no se pueden usar como nombres de variables.
 """
 

@@ -1,17 +1,24 @@
 """
 * Booleanos
 -----------
-Valor booleano (verdadero o falso)
-- Una expresión booleana produce un valor que puede ser verdadero o falso.
-- En Python, una expresión verdadera (True) tiene el valor 1.
-- Una expresión falsa (False) tiene el valor 0.
+Los valores booleanos representan dos estados lógicos: verdadero (`True`) o falso (`False`).
+
+Características:
+----------------
+- Una `expresión booleana` es aquella que produce como resultado `True` o `False`.
+- En Python, `True` se comporta como el número `1`, y `False` como el número `0`.
+- Esto permite usar valores booleanos en operaciones numéricas y comparaciones.
 """
 
-# Verdadero
-True
-# Falso
-False
+# Valores booleanos
+print(True)  # True
+print(False)  # False
 
-# Comparamos que True y False sean iguales a sus respectivos valores.
+# Comparación con enteros
 print(True == 1)  # True
 print(False == 0)  # True
+
+# También pueden usarse en operaciones matemáticas
+print(True + True)  # 2
+print(False + True)  # 1
+print(True * 10)  # 10
