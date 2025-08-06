@@ -1,55 +1,60 @@
 """
 * Operadores de asignación
---------------------------
-- Asignar: Establecer un valor a una variable.
-- Los operadores de asignación se utilizan para asignar valores a una variable.
-- Cuando estamos utilizando un `operador de asignación` como `+=`, estás diciendo que quieres tomar el valor actual
-de la variable, realizar una operación con otro valor, y luego almacenar el resultado de nuevo en la misma variable.
+---------------------------
+Asignar: Significa darle un valor a una variable.
+
+Los operadores de asignación se usan para guardar un valor en una variable.
+
+Por ejemplo:
+- El operador `=` asigna directamente un valor.
+- Mientras que operadores como `+=` combinan una operación con la asignación.
+
+Cuando usamos `+=`, estamos diciendo:
+“Toma el valor actual de la variable, súmale otro valor, y guarda el resultado en la misma variable”.
 
 Ejemplo:
 --------
-1. El valor actual de `a` es `7`
-a = 7
+1. Asignamos el valor 7 a la variable `numero`:
+   numero = 7
 
-2. Le sumamos 3 al valor actual de `a` y asignamos este nuevo valor `10` de vuelta a la variable `a`.
-a += 3
+2. Usamos `+=` para sumarle 3 al valor actual de `numero`:
+   numero += 3  # Ahora numero vale 10
 
-3. Ahora `a` tiene el valor `10`.
+3. El nuevo valor de `numero` es 10.
 """
 
 # Asignar un valor a una variable
-a = 1
-print("a:", a)
+numero = 1
+print("numero:", numero)
 
 # Asignación múltiple
-a, b = 1, 2
+numero1, numero2 = 1, 2
 
 # Suma y asignación a una variable +=
-# Esto es equivalente a `a = a + 1`
-a += 1
-print("a +=", a)
+# Esto es equivalente a `numero = numero + 1`
+numero += 2
+print("numero +=", numero)
 
 # Resta y asignación a una variable -=
-a -= 1
-print("a -=", a)
+numero -= 1
+print("numero -=", numero)
 
 # Multiplicación y asignación a una variable *=
-a *= 1
-print("a *=", a)
+numero *= 4
+print("numero *=", numero)
 
 # División y asignación a una variable /=
-
-a /= 1
-print("a /=", a)
+numero /= 2
+print("numero /=", numero)
 
 # División entera y asignación a una variable //=
-a //= 1
-print("a //=", a)
+numero1 //= 2
+print("numero1 //=", numero1)
 
 # Potencia y asignación a una variable **=
-a **= 1
-print("a **=", a)
+numero2 **= 4
+print("numero2 **=", numero2)
 
 # Módulo y asignación a una variable %=
-a %= 1
-print("a %=", a)
+numero1 %= 1
+print("numero1 %=", numero1)

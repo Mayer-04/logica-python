@@ -1,12 +1,16 @@
 """
-* Operadores de Identidad
+* Operadores de identidad
 --------------------------
-El nombre de este operador se da a partir de querer comprobar la identidad (si son el mismo objeto).
+Los operadores de identidad se utilizan para comprobar si dos variables hacen `referencia` al mismo objeto
+en memoria.
 
-- Se utiliza la palabra clave `is` y `is not` para chequear la `identidad` de un objeto.
-- Se utilizan para comparar si dos objetos son idénticos o no (si apuntan al mismo objeto en memoria).
-- Si son iguales devuelve `True`, de lo contrario `False`.
+En Python, esto se hace con las palabras clave:
+- `is`: devuelve `True` si dos variables son el mismo objeto (tienen el mismo `id()`).
+- `is not`: devuelve `True` si dos variables `no` son el mismo objeto.
+
 - Si dos variables distintas tienen el mismo `id()`, el resultado de `is` es `True`.
+
+NOTA: Es importante notar que `ser el mismo objeto` no es lo mismo que `tener el mismo valor`.
 """
 
 number = 2
@@ -20,20 +24,31 @@ print("Operador is not:", number is not number2)  # True
 
 # Python reutiliza el mismo objeto que almacena el valor "Hello" para ambas variables.
 # Las listas tienen un `id` diferente aún si en dos variables diferentes son iguales
-var = "Hello"
-var2 = "Hello"
+saludo = "Hello"
+saludo2 = "Hello"
 
-print("id de var:", id(var))  # 2759573135520
-print("id de var2:", id(var2))  # 2759573135520
+print("id de saludo:", id(saludo))  # 129013293168080
+print("id de saludo2:", id(saludo2))  # 129013293168080
 
-print("var es igual a var2:", var is var2)  # True
+print("saludo es igual a saludo2:", saludo is saludo2)  # True
 
 # Comprobando el `id` de las listas
 new_list = [1, 2, 3]
 new_list2 = [1, 2, 3]
 
 # Las listas presentan un `id` diferente aún siendo iguales en su valor
-print("nueva tupla:", id(new_list))  # 3107485702400
-print("otra tupla:", id(new_list2))  # 3107485700480
+print("nueva lista:", id(new_list))  # 129013292737344
+print("otra lista:", id(new_list2))  # 129013294913280
 
-print("nueva tupla es igual a otra tupla:", new_list is new_list2)  # False
+print("nueva lista es igual a otra lista:", new_list is new_list2)  # False
+
+# Otros ejemplos de identidad
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+
+print(a is b)  # True, porque b apunta al mismo objeto que a
+print(a is c)  # False, aunque tengan el mismo valor, son objetos diferentes en memoria
+print(a == c)  # True, porque sus valores son iguales
+
+print(a is not c)  # True, porque a y c no son el mismo objeto
