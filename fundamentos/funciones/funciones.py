@@ -1,37 +1,47 @@
 """
 * Funciones en Python
 ----------------------
-Una función es un bloque de código reutilizable que realiza una tarea específica. 
-Las funciones permiten dividir el código en módulos más manejables, promoviendo la reutilización y la legibilidad.
+Una función es un bloque de código reutilizable que realiza una tarea específica.
+Permite dividir el programa en partes más manejables, promoviendo la reutilización y mejorando la legibilidad.
 
-- La sentencia `return` retorna un valor (resultado) en una función.
-- `return` sin una expresión como argumento retorna `None`.
-- La sentencia `pass` no hace nada en una función.
-- Las variables dentro de una función tienen un `scope` limitado conocido como variable local.
-- Cuantas más dependencias haya en su función sera más difícil de mantener en el futuro.
+Características clave:
+-----------------------
+- La sentencia `return` permite devolver un valor desde una función.
+- Si `return` se usa sin valor o no se incluye en absoluto, la función devuelve `None` por defecto.
+- La sentencia `pass` indica que el bloque no hace nada; puede usarse como marcador de posición.
+- Las variables definidas dentro de una función tienen un `scope local`, es decir, solo existen dentro de ella.
+- A mayor número de dependencias externas, más difícil será mantener y testear la función en el futuro.
 
-RECOMENDACIÓN: 
-- Utilizar las `anotaciones de tipo` en Python aunque sea algo opcional. Principalmente especificando el tipo de retorno. 
-- Documentar las funciones si espera que otras personas usen su funcionabilidad en cualquier momento en el futuro.
+Recomendaciones:
+----------------
+- Utiliza `anotaciones de tipo` (type hints) aunque sean opcionales.
+  Principalmente para indicar tipos de parámetros y valores de retorno.
+- Documenta tus funciones usando docstrings si esperas que otras personas (o tú en el futuro) usen ese código.
 
-En este archivo, se exploran los siguientes conceptos:
+En este archivo se exploran los siguientes conceptos fundamentales:
+-------------------------------------------------------------------
 - Declaración de funciones
 - Parámetros y argumentos
 - Retorno de múltiples valores
-- Valores por defecto
+- Valores por defecto en parámetros
 - Funciones anónimas (lambdas)
 - Funciones como objetos de primera clase (closures)
-- Desempaquetado de argumentos
-- Anotaciones de funciones (type hints)
+- Desempaquetado de argumentos (`*args`, `**kwargs`)
+- Anotaciones de tipo (type hints)
 - Recursividad
-- Argumentos por nombre y arbitrarios
+- Argumentos por nombre y argumentos arbitrarios
 - Uso de la sentencia `pass`
-- Callbacks
+- Callbacks (pasar funciones como parámetros)
 - Decoradores
 """
 
+from typing import Callable
 
-# Declaración de funciones
+# --------------------------------------
+# * Declaración básica de funciones
+# --------------------------------------
+
+
 # Una función se define usando la palabra clave `def`, seguida del nombre de la función y paréntesis.
 def saludar():
     print("¡Hola, mundo!")
@@ -41,7 +51,11 @@ def saludar():
 saludar()
 
 
-# Parámetros y argumentos
+# --------------------------------------
+# * Parámetros y argumentos
+# --------------------------------------
+
+
 # Las funciones pueden recibir datos a través de parámetros,
 # que se pasan como argumentos cuando se llama a la función.
 def saludar_a(nombre):
@@ -53,7 +67,11 @@ def saludar_a(nombre):
 saludar_a("Mayer")
 
 
-# Valores por defecto
+# --------------------------------------
+# * Valores por defecto
+# --------------------------------------
+
+
 # Puedes definir valores por defecto para los parámetros.
 # Si no se proporciona un argumento, se usará el valor por defecto.
 def saludar_con_titulo(nombre: str, titulo: str = "Sr./Sra."):
@@ -67,32 +85,43 @@ def saludar_con_titulo(nombre: str, titulo: str = "Sr./Sra."):
 
 
 # Usando el valor por defecto para `titulo`.
-saludar_con_titulo("Mayer")
+saludar_con_titulo("Mayer")  # Salida: ¡Hola, Sr./Sra. Mayer!
 
 # Sobrescribiendo el valor por defecto para `titulo`.
-saludar_con_titulo("Mayer", "Dr.")
+saludar_con_titulo("Mayer", "Dr.")  # Salida: ¡Hola, Dr. Mayer!
 
 
-# Funciones con múltiples parámetros
+# --------------------------------------
+# * Múltiples parámetros
+# --------------------------------------
+
+
 # Las funciones pueden tener múltiples parámetros para manejar más datos.
 def calcular_area_rectangulo(base, altura):
+    """Calcula el área de un rectángulo."""
     return base * altura
 
 
 # Llamada a la función `calcular_area_rectangulo` con múltiples argumentos.
-# El orden de los argumentos si importa.
+# El orden de los argumentos SI importa.
 area = calcular_area_rectangulo(5, 10)
 print(f"El área del rectángulo es: {area}")
 
 
-# Retorno de múltiples valores
+# --------------------------------------
+# * Retorno de múltiples valores
+# --------------------------------------
+
+from typing import Tuple
+
+
 # Python permite retornar múltiples valores desde una función, separados por comas.
-# Los valores retornados se empaquetan automáticamente en una tupla.
-def operaciones(num1, num2):
-    """Realiza operaciones matemáticas básicas entre dos números.
+# Los valores retornados se `empaquetan` automáticamente en una `tupla`.
+def operaciones(num1: int, num2: int) -> Tuple[int, int, int, float]:
+    """Realiza operaciones básicas entre dos números.
 
     Retorno:
-    tuple: Contiene la suma, resta, multiplicación y división de los dos números.
+        tuple: suma, resta, multiplicación, división
     """
     suma = num1 + num2
     resta = num1 - num2
@@ -113,7 +142,7 @@ def prueba():
     """Retorna una cadena, un entero y una lista.
 
     Retorno:
-    tuple: Contiene una cadena, un entero y una lista.
+        tuple: (str, int, list)
     """
     return "Andres CMS", 20, [1, 2, 3]
 
@@ -156,15 +185,20 @@ print("Resultado Filter:", result_filter)  # [2, 4]
 
 
 # Retornando una función `lambda` desde una función tradicional
-def suma(value):
+def suma(value: int) -> Callable[[int, int], int]:
+    """Devuelve una función lambda que suma 'value' a la suma de otros dos números."""
     return lambda num1, num2: num1 + num2 + value
 
 
 # Imprimiendo el resultado de la función tradicional con la función lambda.
-print("Función tradicional con lambda:", suma(5)(1, 2))  # 8
+print("Funcion tradicional con lambda:", suma(5)(1, 2))  # 8
 
 
-# Funciones anidadas (Closures)
+# --------------------------------------
+# * Funciones anidadas: Closures
+# --------------------------------------
+
+
 # Una función anidada es una función definida dentro de otra función.
 def funcion_externa(x):
     """Contiene una función interna que utiliza la variable `x` de la función externa.
@@ -187,18 +221,22 @@ def funcion_externa(x):
 # Usando la función anidada.
 suma_10 = funcion_externa(10)
 resultado = suma_10(5)  # Llama a `funcion_interna(5)`, donde `x` es 10.
-print(f"El resultado de la función anidada es: {resultado}")
+print(f"El resultado de la función anidada es: {resultado}")  # Salida: 15
 
 
-# Función recursiva
+# --------------------------------------
+# * Función Recursiva
+# --------------------------------------
+
+
 # Una función recursiva es aquella que se llama a sí misma.
-# Necesita una condición de parada o salida porque se volvera a llamar a si misma.
+# Necesita una condición de parada o salida porque se volvera a llamar a si misma de manera infinita.
 def calcular_factorial(number: int) -> int:
     """
-    Calcula el factorial de un entero positivo dado.
+    Calcula el factorial de un número entero positivo.
 
-    Argumentos:
-        número (int): El número para calcular el factorial.
+    Parámetros:
+        number (int): El número para calcular el factorial.
 
     Retorno:
         int: El factorial del número dado.
@@ -210,10 +248,13 @@ def calcular_factorial(number: int) -> int:
 
 
 # Calculando el factorial de 5.
-print(calcular_factorial(5))  # Imprime: 120
+print(calcular_factorial(5))  # Salida: 120
+
+# --------------------------------------
+# * Argumentos por nombre (keywords)
+# --------------------------------------
 
 
-# Keyword arguments - Argumentos por nombre
 # Python permite llamar a las funciones especificando los argumentos por nombre,
 # lo cual permite ignorar el orden de los parámetros.
 def describir_persona(nombre, edad):
@@ -230,9 +271,13 @@ def describir_persona(nombre, edad):
 describir_persona(edad=30, nombre="Maria")
 
 
-# Función con parámetros arbitrarios (kwargs)
-# Python permite recibir un número indeterminado de parámetros usando `**kwargs`,
-# que crea un `diccionario` con los argumentos pasados por nombre.
+# --------------------------------------
+# * Argumentos arbitrarios: **kwargs
+# --------------------------------------
+
+
+# Python permite recibir un número indeterminado de parámetros usando `**kwargs`.
+# Crea un `diccionario` con los argumentos pasados por nombre.
 def indeterminados_nombre(**kwargs):
     """Imprime los argumentos recibidos como pares clave-valor.
 
@@ -245,8 +290,11 @@ def indeterminados_nombre(**kwargs):
 # Llamando a la función `indeterminados_nombre` con varios argumentos por nombre.
 indeterminados_nombre(n=5, c="Hola Andres", l=[1, 2, 3, 4, 5])
 
+# --------------------------------------
+# * Argumentos arbitrarios: *args
+# --------------------------------------
 
-# Funciones con parámetros arbitrarios (args)
+
 # De forma similar, se puede recibir un número indeterminado de argumentos posicionales con `*args`.
 # Los datos recibidos se pasan como una `tupla`.
 def saludar_varios(*args):
@@ -263,7 +311,11 @@ def saludar_varios(*args):
 saludar_varios("Mayer", "Andrés", "Luis")
 
 
-# Sentencia pass
+# --------------------------------------
+# * Sentencia pass
+# --------------------------------------
+
+
 # La sentencia `pass` en Python no hace nada. Se usa como un marcador de posición en el código.
 def pass_func():
     pass  # No hace nada
@@ -273,9 +325,13 @@ def pass_func():
 pass_func()
 
 
-# Callbacks - Funciones que se pasan como argumentos a otras funciones.
-# Se puede pasar una función como argumento a otra función, permitiendo la creación de callbacks.
-def ejecutar_callback(func: callable, valor: int) -> int:
+# --------------------------------------
+# * Callbacks
+# --------------------------------------
+
+
+# Callbacks: Funciones que se pasan como argumentos a otras funciones.
+def ejecutar_callback(func: Callable[[int], int], valor: int) -> int:
     """Ejecuta una función (callback) pasada como argumento.
 
     Parámetros:
@@ -298,5 +354,36 @@ resultado_callback = ejecutar_callback(doblar, 10)
 print(f"Resultado del callback: {resultado_callback}")
 
 
-# Decoradores
+# --------------------------------------
+# * Decoradores
+# --------------------------------------
+
 # Un decorador es una función que toma otra función como argumento y extiende o modifica su comportamiento.
+
+
+def decorador_saludo(func: Callable[..., None]) -> Callable[..., None]:
+    """Un decorador que agrega un mensaje antes y después de la ejecución de una función.
+
+    Parámetros:
+    func (callable): La función a decorar. Debe ser una función que tome argumentos arbitrarios.
+
+    Retorno:
+    callable: Un decorador que envuelve la función original y agrega el comportamiento adicional.
+    """
+
+    def envoltura(*args, **kwargs):
+        """Función envoltura que añade comportamiento antes y después de la función original."""
+        print("Antes del saludo...")
+        resultado = func(*args, **kwargs)
+        print("Después del saludo.")
+        return resultado
+
+    return envoltura
+
+
+@decorador_saludo
+def saludar_usuario(nombre):
+    print(f"Hola, {nombre}!")
+
+
+saludar_usuario("Andrés")
