@@ -1,29 +1,40 @@
 """
 * Listas en Python: Secuencia
 ------------------------------
-Una lista en Python es una colección ordenada y mutable de elementos.
+Una lista es una colección ordenada y mutable de elementos.
 
-Características de las listas:
--------------------------------
-- Se definen usando corchetes: `[]`.
-- Son equivalentes a los arrays o vectores en otros lenguajes de programación.
-- Pueden contener elementos de `diferentes tipos`: números, cadenas, booleanos, otras listas, objetos, etc.
-- Son mutables, lo que significa que sus elementos pueden modificarse después de la creación.
-- Soportan listas anidadas (listas dentro de listas), permitiendo la creación de estructuras complejas como matrices.
-- Son iterables, es decir, se pueden recorrer usando bucles como `for`.
-- Se pueden concatenar con el operador `+` y repetir con el operador `*`.
-- Internamente, las listas son objetos de la clase `list`, que utiliza arreglos dinámicos para gestionar su tamaño.
-- Puedes crear una lista vacía o convertir otros iterables en lista usando la función `list()`.
+- Se definen utilizando corchetes [].
+- Son equivalentes a los arrays dinámicos o vectores en otros lenguajes de programación.
+- Pueden contener elementos de cualquier tipo de datos (números, cadenas, objetos, incluso otras listas).
+
+Características principales:
+----------------------------
+- Mutabilidad: Sus elementos pueden modificarse, agregarse o eliminarse después de la creación.
+- Orden: Mantienen el orden de inserción de los elementos.
+- Anidación: Soportan listas dentro de listas, permitiendo estructuras complejas como matrices.
+- Iterables: Se pueden recorrer usando bucles (for) y comprensiones de lista.
+
+Operaciones básicas:
+--------------------
+- Concatenación: Usar el operador `+` para unir listas.
+- Repetición: Usar el operador `*` para duplicar elementos.
+- Indexación: Acceder a elementos por su posición (índice).
+- Slicing: Extraer subsecuencias usando la notación [inicio:fin:paso].
+
+Implementación interna:
+------------------------
+- Las listas son objetos de la clase `list` en Python.
+- Internamente utilizan arreglos dinámicos que se redimensionan automáticamente.
+- Se pueden crear directamente con `[]` o usando el constructor `list()`.
 - Es posible convertir listas en otros tipos de datos, como:
   - `tuple` (tupla)
   - `set` (conjunto)
   - `dict` (diccionario, si los elementos son pares clave-valor)
   - `str` (cadena, si todos los elementos son cadenas)
 
-
-⚠️ Importante:
-Asignar una lista a otra variable `no crea una copia`, sino que ambas variables `apuntan a la misma lista`.
-Para copiar una lista correctamente, usa `copy()` o slicing (`lista[:]`).
+⚠️ IMPORTANTE: Referencias vs Copias
+- Asignar una lista a otra variable crea una referencia, NO una copia.
+- Para crear copias usar: `lista.copy()`, `list(lista)` o `lista[:]`.
 
 Rendimiento y buenas prácticas:
 -------------------------------
@@ -37,16 +48,16 @@ Rendimiento y buenas prácticas:
 
 Métodos comunes de las listas:
 -------------------------------
-- `append(x)`: Agrega `x` al final de la lista.
-- `extend(iterable)`: Agrega todos los elementos de un iterable (como otra lista) al final de la lista.
-- `insert(i, x)`: Inserta `x` en la posición `i`.
+- `append(x)`: Añade un elemento al final de la lista.
+- `extend(iterable)`: Añade todos los elementos de un iterable (como otra lista) al final de la lista.
+- `insert(index, object)`: Inserta un elemento (object) en la posición especificada (index).
 - `remove(x)`: Elimina la primera aparición de `x`.
-- `pop([i])`: Elimina y retorna el elemento en la posición `i`. Si no se especifica, elimina el último.
+- `pop([i])`: Elimina y devuelve el elemento en la posición `i`. Si no se especifica, elimina el último.
 - `clear()`: Elimina todos los elementos de la lista.
-- `index(x[, start[, end]])`: Retorna el índice de la primera aparición de `x`. 
+- `index(x[, start[, end]])`: Devuelve el índice de la primera aparición de `x`.
   Puede limitarse a un rango con `start` y `end`.
-- `count(x)`: Cuenta cuántas veces aparece `x` en la lista.
-- `sort(key=None, reverse=False)`: Ordena la lista en su lugar. 
+- `count(x)`: Devuelve el número de veces que aparece `x` en la lista.
+- `sort(key=None, reverse=False)`: Ordena la lista en su lugar.
   Se puede personalizar con una función `key` o invertir con `reverse=True`.
 - `reverse()`: Invierte el orden de los elementos.
 - `copy()`: Devuelve una `copia superficial` de la lista (los elementos no se duplican, solo la estructura).
@@ -110,11 +121,11 @@ empty_list.append("Hello")
 print("Lista después de append():", empty_list)  # Salida: ["Hello"]
 
 # Insertar un elemento en una posición específica de la lista usando insert()
-numbers.insert(0, 0)
-print("Lista después de insert(0, 0):", numbers)  # Salida: [0, 10, 2, 3, 4, 5, 6, 7, 8]
+numbers.insert(0, 1)
+print("Lista después de insert(0, 1):", numbers)  # Salida: [1, 10, 2, 3, 4, 5, 6, 7, 8]
 
 # Añadir varios elementos a una lista usando extend()
-# Nota: extend() espera un iterable
+# Nota: extend() espera un ITERABLE
 empty_list.extend("Python")
 print(
     "Lista después de extend():", empty_list
@@ -171,8 +182,9 @@ print(
     "Slicing extendido en orden inverso:", reversed_slicing
 )  # Salida: [90, 70, 50, 30, 10]
 
-# Operaciones adicionales con listas
-# ----------------------------------
+# -------------------------------------
+# * Operaciones adicionales con listas
+# -------------------------------------
 
 # clear() elimina todos los elementos de una lista
 numbers.clear()
