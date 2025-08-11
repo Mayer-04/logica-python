@@ -1,9 +1,11 @@
 """
 * Enum: Enumeración
 --------------------
-Un enum permite definir un conjuntos de valores simbólicos asociados a un nombre, cada uno de ellos único y constante.
+Un enum permite definir un conjuntos de valores simbólicos asociados a un nombre, 
+cada uno de ellos único y constante.
 
-Valor simbólico: Es el nombre de un miembro de una enumeración. Representen conceptos claros y significativos dentro de tu código.
+Valor simbólico: Es el nombre de un miembro de una enumeración. 
+Representen conceptos claros y significativos dentro de tu código.
 
 - Son útiles para representar un conjunto limitado de opciones o constantes que no cambiarán a lo largo del tiempo.
 - Cada miembro de una enumeración tiene un valor único. Intentar asignar el mismo valor a dos nombres diferentes
@@ -20,9 +22,9 @@ from enum import Enum
 
 
 class Color(Enum):
-    AMARILLO: int = 1
-    AZUL: int = 2
-    ROJO: int = 3
+    AMARILLO = 1
+    AZUL = 2
+    ROJO = 3
 
 
 print(Color(1))  # Color.AMARILLO

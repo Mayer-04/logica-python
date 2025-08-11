@@ -23,7 +23,7 @@ Operaciones comunes con sets:
 new_set = set()
 print(new_set)  # Imprime: set()
 
-# Inicialmente, las llaves vacías {} definen un diccionario, no un set
+# IMPORTANTE: Inicialmente las llaves vacías {} definen un diccionario, no un set
 empty_dict = {}
 print(empty_dict)  # Imprime: {}
 print(type(empty_dict))  # Imprime: <class 'dict'>

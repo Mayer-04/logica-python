@@ -1,47 +1,41 @@
 """
 * Estructuras de control condicionales
 --------------------------------------
-Las estructuras condicionales permiten que un programa ejecute diferentes bloques de código en función de ciertas
-condiciones.
+Las estructuras condicionales permiten que un programa tome decisiones:
+dependiendo de si una condición es verdadera (True) o falsa (False), se ejecuta un bloque de código u otro.
 
-- `if`: Evalúa una condición y, si es verdadera, ejecuta un bloque de código.
-- `elif`: Se usa después de un `if` inicial para verificar una nueva condición si la primera es falsa.
-Es una abreviación de “else if” (si no - de lo contrario si).
-- `else`: Se ejecuta si todas las condiciones anteriores (`if` y `elif`) son falsas.
-- `match`: Introducido en Python 3.10, similar a `switch` en otros lenguajes, 
-permite seleccionar un bloque de código para ejecutar basado en el valor de una expresión.
+- if: Evalúa una condición; si es verdadera, ejecuta su bloque de código.
+- elif: ("else if") Se usa después de un if para evaluar una nueva condición si la anterior fue falsa.
+- else: Se ejecuta cuando todas las condiciones anteriores (if y elif) resultaron falsas.
 
-Las condiciones que se evalúan en estas estructuras deben resolverse en valores booleanos 
-(`True` o `False`) para determinar el flujo de ejecución.
+A partir de Python 3.10, también existe:
+----------------------------------------
+- match: Similar a `switch` en otros lenguajes, permite comparar un valor contra varios patrones y ejecutar
+  el bloque que coincida. Muy útil para evitar largas cadenas de `if/elif`.
 
-- Es mala practica poner `pass` dentro de un `else` ya que es redundante.
+Notas importantes:
+------------------
+- Las condiciones se evalúan como valores booleanos (True o False).
+- Aunque es válido usar `pass` en un `else`, normalmente es innecesario y se considera mala práctica.
 """
 
+# if básico
+# Ejecuta el bloque solo si la condición es verdadera
 numero = 5
-
-# Condicional if básico
-# Verificamos si el número es mayor que cero
 if numero > 0:
-    print("El número es positivo.")  # Se ejecuta si la condición es verdadera
+    print("El número es positivo.")  # Se cumple porque 5 > 0
 
-# Introducción a las condiciones con 'if' y 'else'
-# Este ejemplo verifica si un número es positivo o negativo
-
+# if con else
+# Si la condición es falsa, se ejecuta el bloque de 'else'
 numero = -3
-
-# Condición para verificar si el número es mayor que cero
 if numero > 0:
     print("El número es positivo.")
 else:
-    print(
-        "El número es negativo o cero."
-    )  # Se ejecuta si la condición del 'if' es falsa
+    print("El número es negativo o cero.")
 
-# Introducción a las condiciones con 'if', 'elif' y 'else'
-# Este ejemplo verifica si un número es positivo, negativo o cero
+# if, elif y else
+# Permite evaluar varias condiciones en orden
 numero = 0
-
-# Se evalúan múltiples condiciones secuencialmente
 if numero > 0:
     print("El número es positivo.")
 elif numero < 0:
@@ -51,10 +45,9 @@ else:
         "El número es cero."
     )  # Se ejecuta si todas las condiciones anteriores son falsas
 
-# Uso de múltiples condiciones con 'if', 'elif' y 'else'
+# Uso con múltiples rangos de valores
 # Este ejemplo clasifica a una persona según su edad
 edad = 25
-
 if edad < 12:
     print("Eres un niño.")
 elif 12 <= edad < 18:
@@ -64,9 +57,12 @@ elif 18 <= edad < 60:
 else:
     print("Eres un adulto mayor.")
 
-# Curiosidad: Condiciones en una sola línea con el Operador Ternario
+# * Condiciones en una sola línea con el `Operador Ternario`
+#
 # Sintaxis: <valor_si_true> if <condición> else <valor_si_false>
+#
 # [código si se cumple] if [condición] else [código si no se cumple]
+#
 # Este operador es útil para expresiones cortas y claras
 numero = 5
 mensaje = (

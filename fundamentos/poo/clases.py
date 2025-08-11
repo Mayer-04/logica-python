@@ -1,62 +1,142 @@
 """
 * Clases en Python
 -------------------
-- Las clases son moldes o plantillas que definen los atributos y métodos de un objeto.
-- Las instancias son los objetos creados a partir de una clase.
-- Los objetos son instancias de una clase.
-- Los nombres de las clases por convención se escriben en `PascalCase`.
-- El parámetro `self` se refiere a la instancia de la clase, es decir, el objeto que se esta creando (el objeto mismo).
-- Cada instancia de la clase tiene un `diccionario de atributos`.
-- Las clases en sí tienen un diccionario que almacena sus atributos y métodos. Con el atributo `__dict__`
-podemos acceder a este diccionario.
-- En Python, todas las clases por defecto (es decir, las que no heredan de ninguna otra clase explícitamente) heredan
-de la clase base `object`.
+- Una clase es una plantilla o molde que define los atributos (datos) y métodos (comportamientos)
+  que tendrán sus objetos.
+- Una `instancia` es un objeto concreto creado a partir de una clase.
+- Un `objeto` es, por tanto, una instancia de una clase.
+- Por convención, los nombres de las clases se escriben en formato `PascalCase`.
+- El parámetro `self` representa a la instancia actual de la clase (el propio objeto en uso).
+- Cada instancia de una clase almacena sus datos en un `diccionario de atributos`.
+- Las clases también tienen un diccionario interno que guarda sus atributos y métodos, accesible mediante `__dict__`.
+- En Python, todas las clases heredan implícitamente de la clase base `object`, incluso si no se especifica.
 """
 
 
-# Definiendo una clase en Python.
+# ---------------------------
+# * Definición de una clase
+# ---------------------------
 class Persona:
-    # Contructor: Método que se ejecuta cuando se crea una instancia de la clase.
     # _init_(self): Define los valores iniciales de nuestra clase.
-    def __init__(self, nombre, edad):
+    def __init__(self, nombre: str, edad: int) -> None:
+        """
+        Constructor de la clase.
+        Se ejecuta automáticamente al crear una instancia de la clase Persona.
+
+        Args:
+            nombre (str): Nombre de la persona.
+            edad (int): Edad de la persona.
+        """
         self.nombre = nombre
         self.edad = edad
 
-    def presentar(self):
+    def presentar(self) -> None:
         """
-        Imprime un saludo de presentación.
+        Imprime un saludo con el nombre y la edad de la persona.
 
         Ejemplo:
-            persona = Persona("Mayer", 24)
-            persona.presentar()  # Imprime "Hola, mi nombre es Mayer y tengo 24 años"
+            persona = Persona("Mayer", 25)
+            persona.presentar()
+            # Salida: Hola, mi nombre es Mayer y tengo 25 años
         """
         print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años")
 
 
-# Creando una instancia de la clase Persona
-mayer = Persona("Mayer", 24)
+# Crear una instancia de la clase `Persona`
+mayer = Persona("Mayer", 25)
+
 print(
-    "persona:", mayer
+    mayer
 )  # Imprime la referencia de la instancia: <__main__.Persona object at 0x0000016C44596510>
 
-# Llamando al método `presentar()` de la instancia
+# Llamar al método `presentar()` de la instancia
 mayer.presentar()
 
 
-# Definiendo una clase Car que acepta argumentos con nombre.
+# --------------------------
+# * Argumentos con nombre
+# --------------------------
 class Car:
-    # Los argumentos que siguen al asterisco deben ser pasados como `argumentos con nombre` (keyword arguments).
+    """
+    Clase que representa un automóvil con un modelo y un color.
+    Solo acepta `argumentos con nombre` al crear una instancia.
+    """
+
     def __init__(self, *, model: str, color: str) -> None:
+        """
+        Constructor de la clase.
+
+        Args:
+            model (str): Modelo del automóvil.
+            color (str): Color del automóvil.
+        """
         self.model = model
         self.color = color
 
 
-# Si intentas pasar los argumentos sin nombrarlos obtendrás un error de tipo `TypeError`.
+# Crear un automóvil usando argumentos con nombre
 toyota = Car(model="Corolla Cross", color="Azul")
-print("modelo:", toyota.model)  # modelo: Corolla Cross
-print("color:", toyota.color)  # color: Azul
+print("modelo:", toyota.model)  # Salida: modelo: Corolla Cross
+print("color:", toyota.color)  # Salida: color: Azul
 
-# Atributo __dict__.
-# __dict__ almacena los atributos de clase. Esto incluye métodos y variables de clase.
+# Atributo __dict__ en instancias
 chevrolet = Car(model="Celta", color="Rojo")
-print(chevrolet.__dict__)  # {'model': 'Celta', 'color': 'Rojo'}
+# __dict__ devuelve un diccionario con los atributos de la instancia y sus valores.
+print(chevrolet.__dict__)  # Salida: {'model': 'Celta', 'color': 'Rojo'}
+
+# --------------------------
+# * Métodos estáticos
+# --------------------------
+
+
+class Calculadora:
+    # Método estático: No recibe 'self' ni 'cls'
+    @staticmethod
+    def sumar(a, b):
+        """Suma dos números"""
+        return a + b
+
+    # Método de clase: recibe la clase como primer argumento
+    @classmethod
+    def descripcion(cls):
+        """Descripción de la clase"""
+        return f"Soy la clase {cls.__name__} y hago operaciones matemáticas."
+
+
+print(Calculadora.sumar(5, 7))  # 12
+print(
+    Calculadora.descripcion()
+)  # Soy la clase Calculadora y hago operaciones matemáticas.
+
+# --------------------------
+# * Herencia
+# --------------------------
+
+
+class Animal:
+    """
+    Clase que representa un animal con un nombre y una edad.
+    """
+
+    def __init__(self, nombre: str, edad: int) -> None:
+        """
+        Constructor de la clase.
+
+        Args:
+            nombre (str): Nombre del animal.
+            edad (int): Edad del animal.
+        """
+        self.nombre = nombre
+        self.edad = edad
+
+
+class Perro(Animal):
+    def __init__(self, nombre: str, edad: int, raza: str) -> None:
+        super().__init__(nombre, edad)
+        self.raza = raza
+
+
+perro = Perro("Zeus", 4, "Dalmata")
+print(perro.nombre)  # Salida: "Zeus"
+print(perro.edad)  # Salida: 4
+print(perro.raza)  # Salida: "Dalmata"
