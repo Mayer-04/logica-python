@@ -1,56 +1,97 @@
 """
-* Range - Rango
-----------------
-- La función `range` es un objeto que genera una secuencia inmutable de números enteros.
-- Se suele utilizar para ser ejecutado en un bucle `for`.
-- Los parámetros usados en range deben ser números enteros.
-- `range` no genera todos los números en la memoria desde el inicio. En su lugar, los números
-se generan cuando son necesarios, lo que lo hace eficiente en cuanto a memoria, incluso con grandes rangos.
-- Los valores de un objeto `range` son inmutables, por lo que no se pueden modificar.
-- Aunque es inmutable, `range` puede ser indexado y rebanado (slicing).
+* range() - Generador de secuencias numéricas
+-------------------------------------------
+`range()` es un objeto especial que representa una secuencia inmutable de números enteros.
 
-range toma tres argumentos:
+- Se usa comúnmente en bucles `for` para repetir acciones un número determinado de veces.
+- Todos sus parámetros deben ser números enteros (int).
+
+Eficiencia de memoria:
+----------------------
+- `range` no almacena todos los números en memoria desde el inicio.
+- Genera cada número cuando se necesita, lo que lo hace muy eficiente, incluso para secuencias enormes.
+
+Características principales:
 -----------------------------
-start (inicio), stop (fin) y step (salto) entre elementos.
-- Si `step` se omite, se establece en 1.
-- Si se omite el parámetro `start`, se establece en 0.
-- Los rangos soportan índices negativos, lo que permite generar secuencias decrecientes.
+- Es inmutable: sus valores no se pueden cambiar una vez creado.
+- Se puede acceder a sus elementos por índice (como una lista).
+- Admite slicing (subsecuencias).
+- Soporta índices negativos para recorrer desde el final.
 
-IMPORTANTE: La ventaja de usar un objeto de tipo `range` en vez de uno de tipo `list` o `tuple`
-es que `range` usa una cantidad fija de memoria sin importar cuán grande sea el rango.
+Sintaxis y parámetros:
+-----------------------
+range(start, stop, step)
+
+- start (inicio) → valor inicial de la secuencia. Por defecto es 0 si se omite.
+- stop (fin) → valor donde se detiene la secuencia (no incluido).
+- step (salto) → incremento o decremento entre números. Por defecto es 1.
+  - Si es negativo, genera una secuencia decreciente.
+
+Ventaja frente a list o tuple:
+-------------------------------
+- `range` usa siempre la misma cantidad de memoria, sin importar cuántos números genere.
 """
 
-# Ejemplo 1: Un rango de 0 a 9 (el 'stop' no se incluye)
+# Ejemplo 1: Rango básico de 0 a 9
+# Si pasamos un solo argumento a range(stop),
+# la secuencia empieza en 0 y termina en stop - 1
 rango = range(10)
-print(rango)  # Salida: range(0, 10)
-print(list(rango))  # Salida: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(rango)  # Salida: range(0, 10)  → representación del objeto range
+print(list(rango))  # Salida: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  → convertido a lista
 
-# Ejemplo 2: Verifica si un número está en el rango
-print(5 in rango)  # Salida: True
-print(11 in rango)  # Salida: False
 
-# Ejemplo 3: Usar start y stop, sin step
+# Ejemplo 2: Comprobar si un número está en el rango
+print(5 in rango)  # True  → el número 5 está en la secuencia
+print(11 in rango)  # False → el número 11 no está en la secuencia
+
+
+# Ejemplo 3: Usando start y stop (sin step)
+# range(start, stop) crea una secuencia que inicia en "start"
+# y finaliza en stop - 1, con un incremento de 1 por defecto
 rango2 = range(3, 10)
 print(list(rango2))  # Salida: [3, 4, 5, 6, 7, 8, 9]
 
-# Ejemplo 4: Usar start, stop y un step negativo
-# Cuando el step es negativo, los números en la secuencia disminuyen en lugar de aumentar.
-# El valor de start debe ser mayor que el valor de stop.
+
+# Ejemplo 4: Secuencia decreciente con step negativo
+# Si el "step" es negativo, los números disminuyen
+# En este caso, "start" debe ser mayor que "stop"
 rango_negativo = range(10, 0, -2)
 print(list(rango_negativo))  # Salida: [10, 8, 6, 4, 2]
 
-# Ejemplo 5: Ver uso en un bucle for
+
+# Ejemplo 5: Uso en un bucle for
+# range es muy usado para ejecutar un bloque de código varias veces
 for i in range(3):
     print(i)  # Salida: 0, 1, 2
 
-# Ejemplo 6: Indexación
-print(rango[0])  # Salida: 0
-print(rango[-1])  # Salida: 9 (último elemento)
 
-# Ejemplo 7: Rebanada (slicing)
+# Ejemplo 6: Acceso por índice
+# Igual que una lista, range permite acceder a elementos por posición
+print(rango[0])  # Salida: 0   → primer elemento
+print(rango[-1])  # Salida: 9   → último elemento
+
+
+# Ejemplo 7: Rebanado (slicing)
+# Podemos extraer una parte de la secuencia usando índices
 rango_slice = rango[2:5]
 print(list(rango_slice))  # Salida: [2, 3, 4]
 
+
 # Ejemplo 8: Longitud de un rango
+# La función len() devuelve el número de elementos en el rango
 print(len(rango))  # Salida: 10
 print(len(rango_negativo))  # Salida: 5
+
+# Ejemplo 9: Usando start, stop y step
+# range(start, stop, step)
+rango_3 = range(1, 10, 3)
+print(list(rango_3))  # Salida: [1, 4, 7]
+
+# Ejemplo 10: Ignorar el valor del índice en un bucle for
+# -------------------------------------------------------
+# A veces necesitamos repetir una acción varias veces,
+# pero no nos importa el valor del índice del bucle.
+# Por convención, en Python usamos la variable "_" para indicar
+# que esa variable no se utilizará.
+for _ in range(5):
+    print("Mayer")

@@ -1,24 +1,26 @@
 """
-* Estructura de control repetitiva `for`
-----------------------------------------
-En Python, el bucle for recorre (itera) una secuencia de elementos, por ejemplo, una lista, tupla, diccionario,
-cadena de texto (string) o un rango numérico (range) en el orden en que aparecen.
-En cada iteración, toma un elemento de la secuencia y ejecuta un bloque de código con él.
+* Estructura de control repetitiva: for
+---------------------------------------
+En Python, el bucle `for` recorre (itera) una secuencia de elementos
+como listas, tuplas, diccionarios, cadenas de texto o rangos numéricos.
 
-Python incluye herramientas para controlar el flujo dentro de un bucle:
+En cada iteración:
+- El bucle toma el siguiente elemento de la secuencia.
+- Asigna ese elemento a la variable del bucle.
+- Ejecuta el bloque de código asociado.
 
-- `break`: Detiene el bucle de inmediato, sin terminar las iteraciones restantes.
-- `continue`: Salta al inicio de la siguiente iteración, ignorando el código que queda en la actual.
-- `else`: Se ejecuta una sola vez al final del bucle, pero solo si este no terminó con break.
-- `pass`: No hace nada; se usa como marcador de posición cuando la sintaxis requiere una instrucción
-   pero aún no quieres escribir código allí.
+Herramientas de control dentro de un bucle for:
+-----------------------------------------------
+- break → Detiene el bucle de inmediato.
+- continue → Salta al inicio de la siguiente iteración.
+- else → Se ejecuta al final, solo si el bucle no terminó con break.
+- pass → No hace nada; útil como marcador temporal de código.
 
 Notas importantes:
 ------------------
-- No modifiques directamente la lista o secuencia que estás recorriendo; esto puede producir errores o
-  comportamientos inesperados. Si necesitas cambiarla, trabaja con una copia (lista[:] o list(lista)).
-- Para operaciones simples y expresiones cortas, considera usar `list comprehensions` cuando sea posible:
-  Son más rápidas y más fáciles de leer para tareas simples.
+- Evita modificar directamente la secuencia que recorres.
+- Si necesitas modificarla, trabaja con una copia (lista[:] o list(lista)).
+- Para tareas simples, considera usar list comprehensions: son más rápidas y legibles.
 """
 
 # Bucle for básico
@@ -31,18 +33,28 @@ for fruta in frutas:
 # Usando range() con for
 # range(n) crea números del 0 hasta n-1
 for i in range(5):
-    print(f"Iteración {i}")  # Imprime 0, 1, 2, 3, 4
+    print(f"Iteración {i}")  # Salida: 0, 1, 2, 3, 4
 
 # range(inicio, fin, salto)
 # 'salto' indica cada cuántos números avanzar en la secuencia
 # Por defecto, el salto es 1
 for i in range(1, 10, 2):
-    print(f"Número impar: {i}")  # Imprime 1, 3, 5, 7, 9
+    print(f"Número impar: {i}")  # Salida: 1, 3, 5, 7, 9
+
+# Ignorar el valor del índice en un bucle for
+# --------------------------------------------
+# A veces necesitamos repetir una acción varias veces,
+# pero no nos importa el valor del índice del bucle.
+# Por convención, en Python usamos la variable "_" para indicar
+# que esa variable no se utilizará
+for _ in range(5):
+    print("Mayer")
+
 
 # Recorrer un string
 # El bucle `for` también funciona sobre cada letra (carácter) de un texto
 for letra in "Python":
-    print(f"Letra: {letra}")  # Imprime P, y, t, h, o, n
+    print(f"Letra: {letra}")  # Salida: P, y, t, h, o, n
 
 
 # Iterar usando índices (no recomendado)
@@ -65,7 +77,7 @@ for fruta in frutas:
     print(f"Me gusta comer {fruta}")
 
 
-# Usando continue para saltar una iteración
+# continue: para saltar una iteración
 # `continue` salta el resto del código en la iteración actual y pasa a la siguiente
 for fruta in frutas:
     if fruta == "banana":
@@ -93,7 +105,7 @@ for i in range(3):
 # Una forma concisa y eficiente de crear listas
 # Ejemplo: Crear una lista con los cuadrados de los números del 1 al 5
 cuadrados = [x**2 for x in range(1, 6)]
-print("Cuadrados:", cuadrados)  # Imprime [1, 4, 9, 16, 25]
+print("Cuadrados:", cuadrados)  # Salida: [1, 4, 9, 16, 25]
 
 
 # Recorriendo una lista y un string al revés
@@ -114,4 +126,4 @@ for letra in lenguaje[::-1]:
 # Iterando una cadena saltándose elementos
 # Recorrer saltando elementos (de 2 en 2)
 for letra in lenguaje[::2]:
-    print("Letras 2 en 2:", letra)  # Imprime `JvSrp`
+    print("Letras 2 en 2:", letra)  # Salida: `JvSrp`
