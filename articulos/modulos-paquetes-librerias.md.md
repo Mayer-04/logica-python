@@ -57,7 +57,8 @@ from mi_paquete import saludo
 saludo.hola("Luis")
 ```
 
-**Consejo:** Los paquetes son útiles cuando tu proyecto crece y quieres dividirlo en partes más fáciles de manejar.
+> [!NOTE]
+> Los paquetes son útiles cuando tu proyecto crece y quieres dividirlo en partes más fáciles de manejar.
 
 ## 📚 Librería o Biblioteca
 
@@ -65,7 +66,7 @@ Una **librería** (también llamada biblioteca) es un **conjunto de módulos o p
 
 ### Tipos de librerías
 
-**Externas**
+### Externas
 
 No vienen con Python. Se instalan con herramientas como `pip`, `poetry`, `uv`, etc.
 
@@ -80,11 +81,12 @@ pip install pandas
 - `NumPy`: operaciones matemáticas y arreglos.
 - `FastAPI`: construir APIs web.
 
-**Nativas (o estándar)**
+### Nativas (o estándar)
 
 Ya vienen con Python, no necesitas instalarlas.
 
-**Consejo:** Usa librerías para aprovechar el trabajo que ya hicieron otros programadores. ¡Te ahorran mucho tiempo!
+> [!NOTE]
+> Usa librerías para aprovechar el trabajo que ya hicieron otros programadores.
 
 ## ¿Qué es una librería nativa en Python?
 
@@ -115,5 +117,3 @@ import random
 numero = random.randint(1, 10)
 print(f"Número aleatorio: {numero}")
 ```
-
-**Consejo:** Explora primero las librerías nativas antes de instalar nuevas. Muchas veces ya tienes lo que necesitas.
