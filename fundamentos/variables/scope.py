@@ -4,7 +4,7 @@
 El scope en Python define `dónde` una variable o función puede ser accedida dentro del código.
 
 - El scope define en qué partes de tu código una variable está disponible para ser usada.
-Si intentas usar una variable fuera de su scope, Python te dará un error, porque no la reconoce.
+- Si intentas usar una variable fuera de su scope, Python te dará un error, porque no la reconoce.
 
 Tipos de scope y cómo Python los busca (Regla LEGB):
 -----------------------------------------------------
@@ -28,22 +28,22 @@ en el nivel más alto de un script, son accesibles desde cualquier parte del có
 - Python buscará aquí solo si no encuentra la variable en ninguno de los scopes anteriores.
 
 ⚠️ Importante:
---------------
+---------------
 - Las estructuras de control como `if`, `for`, y `while` `no crean` un nuevo scope en Python.
 - Las variables definidas dentro de ellas `pertenecen al mismo scope` en el que están contenidas.
 """
 
 # 1. Scope Global
 # ---------------
-x = 10  # Esta variable está en el ámbito global
+numero = 10  # Esta variable está en el ámbito global (variable global)
 
 
 def funcion_global():
-    # Puede acceder a 'x' porque está en el scope global
-    print(x)
+    # Puedes acceder a 'numero' porque está en el scope global
+    print(numero)
 
 
-funcion_global()  # Imprime: 10
+funcion_global()  # Salida: 10
 
 
 # 2. Scope Local
@@ -53,7 +53,7 @@ def funcion_local():
     print(y)
 
 
-funcion_local()  # Imprime: 20
+funcion_local()  # Salida: 20
 
 # print(y)  # ❌ Esto genera un error porque 'y' no existe fuera de la función
 
@@ -71,30 +71,39 @@ def funcion_externa():
     funcion_interna()
 
 
-funcion_externa()  # Imprime: 30
+funcion_externa()  # Salida: 30
 
 
-# 4. Scope Built-in
-# -----------------
-# Python busca nombres en este orden: Local -> Enclosing -> Global -> Built-in
-print(len([1, 2, 3]))  # 'len' es una función built-in. Imprime: 3
+# 4. Ámbito Built-in y orden de resolución de nombres (LEGB)
+# -----------------------------------------------------------
+# 1. Local: Dentro de la función actual
+# 2. Enclosing: En funciones anidadas (no aplica aquí)
+# 3. Global: En el módulo actual
+# 4. Built-in: En el conjunto de nombres predefinidos de Python
+
+# Ejemplo: 'len' es una función built-in
+print(len([1, 2, 3]))  # Salida: 3
+
+# ⚠️ Redefinir 'len' en el ámbito global sobrescribe la función built-in
+len = "Esto ya no es la función len"  # Ahora 'len' es una variable global tipo str
+
+# Ahora 'len' ya no es la función, sino una cadena
+print(len)  # Salida: Esto ya no es la función len
+
+# Intentar usar 'len' como función ahora genera un error
+# print(len([1, 2, 3]))  # ❌ TypeError: 'str' object is not callable
 
 
-# Redefinir 'len' en el scope global sobrescribe la función built-in
-len = "Esto ya no es la función len"  # Ahora 'len' es una variable global
+# 5. Ámbito (Scope) y estructuras de control
+# ------------------------------------------
+# En Python, las estructuras de control como `for`, `if` y `while` NO crean un nuevo scope.
+# Esto significa que las variables definidas dentro de estas estructuras siguen perteneciendo al mismo ámbito externo.
+# Si esta a nivel de archivo, su scope es global. Pero si esta dentro de una función, clase, etc., si scope es local.
 
-print(len)  # Imprime: Esto ya no es la función len
+# Ejemplo:
+for numero in range(5):
+    # Aunque 'resultado' se define dentro del bucle, sigue estando en el ámbito externo
+    resultado = numero * 2
 
-# print(len([1, 2, 3]))  # ❌ Esto ahora generaría un error: 'str' object is not callable
-
-
-# 5. Scope y estructuras de control
-# ---------------------------------
-# Las estructuras como 'for', 'if', 'while' NO crean un nuevo scope.
-# Las variables definidas dentro de ellas siguen estando en el mismo scope.
-
-for i in range(5):
-    j = i * 2  # 'j' se define dentro del for, pero sigue siendo parte del scope global
-
-# Como 'for' no crea un scope, 'j' está disponible aquí
-print(j)  # Imprime: 8 (último valor asignado a j)
+# Como el bucle 'for' no crea un nuevo scope, 'resultado' sigue siendo accesible aquí
+print(f"Último valor de 'resultado': {resultado}")  # Salida: 8 (cuando numero fue 4)

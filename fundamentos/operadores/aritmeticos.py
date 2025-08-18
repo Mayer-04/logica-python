@@ -24,20 +24,27 @@ Ejemplos:
 
 # Suma
 print(2 + 2)
+
 # Resta
 print(2 - 2)
+
 # Multiplicación
 print(2 * 2)
+
 # División: Devuelve un número flotante
 print(2 / 5)  # Salida: 0.4
-# División entera: Redondea el resultado a un número entero, descarte la parte decimal
+
+# División entera: Redondea el resultado a un número entero, descarta la parte decimal
 print(2 // 2)  # Salida: 1
+
 # Potencia
 print(2**2)
+
 # Módulo o residuo
 print(2 % 2)  # Salida: 0
 
 # Concatenación
 print("2" + "2")  # Salida: "22"
+
 # Repetición
 print("1" * 2)  # Salida: "11"
