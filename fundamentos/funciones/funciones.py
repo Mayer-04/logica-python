@@ -20,19 +20,21 @@ Recomendaciones:
 
 En este archivo se exploran los siguientes conceptos fundamentales:
 -------------------------------------------------------------------
-- Declaración de funciones
-- Parámetros y argumentos
-- Retorno de múltiples valores
-- Valores por defecto en parámetros
-- Funciones anónimas (lambdas)
-- Funciones como objetos de primera clase (closures)
-- Desempaquetado de argumentos (`*args`, `**kwargs`)
-- Anotaciones de tipo (type hints)
-- Recursividad
-- Argumentos por nombre y argumentos arbitrarios
-- Uso de la sentencia `pass`
-- Callbacks (pasar funciones como parámetros)
-- Decoradores
+1. Declaración de funciones
+2. Docstrings
+3. Parámetros y argumentos
+4. Retorno de múltiples valores
+5. Valores por defecto en parámetros
+6. Funciones anónimas (lambdas)
+7. Funciones como objetos de primera clase (closures)
+8. Desempaquetado de argumentos (`*args`, `**kwargs`)
+9. Anotaciones de tipo (type hints)
+10. Recursividad
+11. Argumentos por nombre y argumentos arbitrarios
+12. Uso de la sentencia `pass`
+13. Callbacks (pasar funciones como parámetros)
+14. Decoradores
+15. Genéricos en funciones
 """
 
 from typing import Any, Callable, Tuple
@@ -49,6 +51,33 @@ def saludar():
 
 # Llamada a la función `saludar` sin argumentos.
 saludar()
+
+# --------------------------------------
+# * Docstrings en Python
+# --------------------------------------
+# Un docstring es una cadena de texto que documenta el propósito y uso
+# de una función, clase o módulo. Se utiliza para que otros desarrolladores
+# (o tú mismo en el futuro) puedan entender rápidamente el código.
+
+def sumar(a: int, b: int) -> int:
+    """
+    Calcula la suma de dos números enteros.
+
+    Parámetros:
+        a (int): Primer número a sumar.
+        b (int): Segundo número a sumar.
+
+    Retorna:
+        int: Resultado de sumar a y b.
+    
+    Ejemplo:
+        >>> sumar(3, 5)
+        8
+    """
+    return a + b
+
+# Mostrar la documentación de la función en consola
+print(sumar.__doc__)
 
 
 # --------------------------------------
@@ -382,3 +411,55 @@ def saludar_usuario(nombre):
 
 
 saludar_usuario("Andrés")
+
+# ----------------------------------------
+# * Genéricos en funciones (Python 3.12+)
+# ----------------------------------------
+# Desde Python 3.12, es posible definir tipos genéricos directamente en funciones y clases
+# sin necesidad de importar TypeVar o Generic desde el módulo typing (from typing import TypeVar, Generic)
+# Esto mejora la legibilidad y reduce la complejidad al tipar datos
+
+def obtener_ultimo[T](coleccion: list[T]) -> T:
+    """
+    Devuelve el último elemento de una lista de cualquier tipo.
+
+    Parámetros:
+        coleccion (list[T]): Lista de elementos del mismo tipo T.
+
+    Retorna:
+        T: Último elemento de la lista.
+
+    Ejemplo:
+        >>> obtener_ultimo([1, 2, 3])
+        3
+        >>> obtener_ultimo(["rojo", "verde", "azul"])
+        'azul'
+    """
+    return coleccion[-1]
+
+
+def crear_diccionario[K, V](clave: K, valor: V) -> dict[K, V]:
+    """
+    Crea un diccionario de un solo par clave-valor con tipos genéricos.
+
+    Parámetros:
+        clave (K): Cualquier tipo válido para clave.
+        valor (V): Cualquier tipo válido para valor.
+
+    Retorna:
+        dict[K, V]: Diccionario con la clave y valor dados.
+
+    Ejemplo:
+        >>> crear_diccionario("edad", 30)
+        {'edad': 30}
+        >>> crear_diccionario(101, ["A", "B", "C"])
+        {101: ['A', 'B', 'C']}
+    """
+    return {clave: valor}
+
+
+# Ejemplos de uso
+print(obtener_ultimo([5, 10, 15]))           # Salida: 15
+print(obtener_ultimo(["perro", "gato"]))     # Salida: 'gato'
+print(crear_diccionario("activo", True))     # Salida: {'activo': True}
+print(crear_diccionario(1, {"x": 100}))      # Salida: {1: {'x': 100}}
