@@ -1,28 +1,40 @@
 """
 * Cadenas de caracteres: Strings (str)
 --------------------------------------
-Una cadena (o string) es una secuencia de caracteres, utilizada generalmente para representar texto.
-Otra definición: Las cadenas de caracteres son secuencias inmutables de puntos de código Unicode.
+Una cadena (o string) es una secuencia de caracteres, normalmente usada para representar texto.
 
-En Python, las cadenas son inmutables, lo que significa que una vez creadas, no se puede modificar.
-- Las cadenas son accesibles por `índices` y pueden ser `iteradas`.
+Otra definición: 
+-----------------
+Las cadenas de caracteres son secuencias inmutables de puntos de código Unicode.
+(permiten emojis, acentos, símbolos, etc).
+
+En Python, las cadenas son inmutables, lo que significa que una vez creadas, no se pueden modificar.
+- Puedes acceder a caracteres individuales usando `índices`.
+- Se pueden recorrer (iterar) con un bucle `for`.
 - Puedes acceder a un carácter específico utilizando corchetes `[]` y un índice.
-- Si intentas acceder a un índice fuera del rango de la cadena, Python nos dara un error `IndexError`.
-- El slicing en strings está diseñado para ser seguro y no provocar errores al intentar acceder a índices
+- Si intentas acceder a un índice fuera del rango de la cadena (no existe), Python nos dara un error `IndexError`.
+- El slicing (rebanada) en strings está diseñado para ser seguro y no provocar errores al intentar acceder a índices
 fuera del rango de la cadena.
 
 Algunas características de las cadenas:
 ---------------------------------------
-- Creación de cadenas
-- Concatenación y multiplicación de cadenas
-- Secuencias de escape (salto de línea, tabulación)
-- Longitud de cadenas
-- Formateo de cadenas
-- Inmutabilidad y acceso a caracteres
-- Slicing de cadenas
-- Reversión de cadenas
-- Iteración sobre cadenas
-- Métodos comunes de cadenas
+1. Creación de cadenas
+2. Concatenación y multiplicación de cadenas
+3. Secuencias de escape (salto de línea, tabulación)
+4. Longitud de cadenas
+5. Formateo de cadenas
+6. Inmutabilidad y acceso a caracteres
+7. Slicing de cadenas
+8. Reversión de cadenas
+9. Iteración sobre cadenas
+10. Métodos comunes de cadenas
+
+📌 Notas:
+----------
+- Índices comienzan en 0.
+- El segundo valor en slicing (`inicio:fin`) es excluyente (no se incluye).
+- El tercer valor en slicing (`inicio:fin:paso`) indica el paso.
+- El `paso` puede ser negativo para recorrer la cadena en orden inverso.
 """
 
 # Creando una cadena de caracteres usando el contructor `str()`
@@ -96,35 +108,65 @@ print("Mi nombre es {}, tengo {} años y estoy {}".format(name, age, active))
 # Formatear con f-strings (interpolación de variables)
 print(f"Mi nombre es {name}, tengo {age} años y estoy {active}")
 
-# Inmutabilidad y acceso a caracteres
-# Las cadenas son secuencias inmutables: no se pueden cambiar los caracteres individuales.
+# ------------------------------------
+# * Expresiones dentro de un f-string
+# ------------------------------------
+
+greet = f"Hola {(
+    nombre.upper() # Convertir el nombre a mayúsculas
+)}!"
+print(greet)  # Salida: Hola MAYER
+
+nums = [1, 2, 3]
+print(f"Suma: {sum(x**2 for x in nums)}") # Suma: 14
+
+print(f"Reemplazo: {'abc'.replace('a', 'Z').upper()}") # Reemplazo: ZBC
+
+# Inmutabilidad de cadenas
+# Las cadenas (str) en Python son INMUTABLES: no se puede cambiar un carácter específico.
 name = "Mayer"
-# name[0] = "L" ❌ TypeError: 'str' object does not support item assignment
+# name[0] = "L"  # ❌ Esto produce: TypeError: 'str' object does not support item assignment
 
-# Desempaquetar caracteres de una cadena
+# Desempaquetar caracteres
+# Puedes asignar cada carácter de la cadena a variables separadas
 m, a, y, e, r = name
-print(m, a, y, e, r)  # Salida: M a y e r
+print(m, a, y, e, r)  # M a y e r
 
-# Usando un guión bajo _ para ignorar caracteres
-m, a, y, e, _ = name  # El guión bajo se puede usar para ignorar el caracter no deseado
-print(m, a, y, e)  # Salida: M a y e
+# Ignorar caracteres con guión bajo (_)
+# El guión bajo se usa para “descartar” valores que no nos interesan
+m, a, y, e, _ = name
+print(m, a, y, e)  # M a y e
 
-# Acceso a un carácter por índice
-print(name[2])  # Salida: Tercer carácter de la cadena (`y`)
+# Acceder a un carácter por índice
+# Los índices empiezan en 0, name[2] es el tercer carácter
+print(name[2])  # y
 
-# Slicing de cadenas
-# Se puede obtener una 'subcadena' de una cadena utilizando las rebanadas o slicing
-print(name[1:])  # Desde el segundo carácter hasta el final (`ayer`)
-print(name[-1])  # Último carácter de la cadena (`r`)
+# Slicing (rebanado) de cadenas
+# Permite obtener subcadenas: name[inicio:fin] → fin es excluyente
+print(name[1:])   # ayer (desde el índice 1 hasta el final)
+print(name[-1])   # r (último carácter)
 
-# Reversión de cadenas
-# Usando slicing, es posible revertir el orden de los caracteres.
-print(name[::-1])  # Salida: `ryeaM`
+# Revertir una cadena con slicing
+# Ignora el parámetro de inicio y el parámetro de fin
+print(name[::-1])  # ryeaM
 
-# Recorrer cadenas
-# Es posible iterar sobre cada carácter de una cadena utilizando un bucle `for`
+# Recorrer cada carácter con un bucle 'for'
 for character in name:
     print(character)
+
+# Recorrer cada carácter y su índice con 'enumerate()'
+for index, character in enumerate(name):
+    print(index, character)
+    
+# Recorrer cada carácter con zip()
+for index, character in zip(range(len(name)), name):
+    print(index, character)
+    
+# Recorrer cada carácter con un bucle 'while'
+index = 0
+while index < len(name):
+    print(name[index])
+    index += 1
 
 """
 Métodos comunes de cadenas en Python
