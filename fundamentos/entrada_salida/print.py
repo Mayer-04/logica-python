@@ -1,24 +1,28 @@
 """
-Función Print: Mostrar en pantalla
------------------------------------
+Función Print: Mostrar información en pantalla
+-----------------------------------------------
 La función `print()` en Python se utiliza para mostrar uno o más valores en la pantalla (o consola).
-- `print()` puede mostrar cualquier tipo de objeto, ya que internamente convierte todo lo que recibe a texto mediante `str()`.
-- `print()` no devuelve ningún valor; su propósito es únicamente mostrar información. 
-Siempre regresa `None`, por lo que no se puede almacenar su resultado.
+
+- `print()` acepta cualquier tipo de dato (texto, números, listas, etc.)
+  porque internamente convierte todo a texto usando `str()`.
+- No devuelve ningún valor útil: siempre regresa `None`.
+  Por eso no se puede guardar su resultado en una variable.
 
 Sintaxis:
+---------
 print(*objetos, sep=' ', end='\n', file=sys.stdout, flush=False)
 
-Parámetros:
-- `objetos`: Los valores que se mostrarán en la pantalla. Pueden ser de cualquier tipo.
-- `sep`: Especifica el separador que se colocará entre los objetos. El valor por defecto es un espacio (' ').
-- `end`: Especifica qué se añadirá al final de la línea. Por defecto, es un salto de línea (`\n`).
-- `file`: Define el destino de la salida. Por defecto, `print()` muestra la salida en la consola (pantalla), 
-que está representada por `sys.stdout`.
-- `flush`: Indica si se debe "vaciar" el contenido inmediatamente, sin almacenarlo en un buffer. 
-Su valor por defecto es `False`.
+Parámetros principales:
+------------------------
+- `*objetos`: Los valores que se mostrarán. Pueden ser de cualquier tipo y se pueden pasar varios, 
+  separados por comas.
+- `sep`: Texto que se coloca entre cada objeto. Por defecto es un espacio `' '`.
+- `end`: Texto que se añade al final. Por defecto es un salto de línea `\n`.
+- `file`: Destino de la salida. Por defecto es la consola (`sys.stdout`).
+- `flush`: Si es `True`, vacía el buffer inmediatamente, mostrando el texto al instante. Por defecto es `False`.
 
 Curiosidad:
+-----------
 - En Python 2, `print` no era una función, sino una declaración. Se usaba sin paréntesis.
 """
 
