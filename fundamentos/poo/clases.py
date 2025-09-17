@@ -83,3 +83,42 @@ print("color:", toyota.color)  # Salida: color: Azul
 chevrolet = Car(model="Celta", color="Rojo")
 # __dict__ devuelve un diccionario con los atributos de la instancia y sus valores.
 print(chevrolet.__dict__)  # Salida: {'model': 'Celta', 'color': 'Rojo'}
+
+
+# -------------------------
+# * Métodos en Python
+# -------------------------
+# - Métodos de instancia: reciben 'self', acceden y modifican atributos del objeto.
+# - Métodos de clase: reciben 'cls', acceden/modifican atributos compartidos de la clase.
+# - Métodos estáticos: no reciben ni 'self' ni 'cls', son funciones auxiliares dentro de la clase.
+
+
+class Banco:
+    cuentas_creadas = 0  # Atributo de clase (global para todas las cuentas)
+
+    def __init__(self, titular, saldo=0):
+        self.titular = titular  # Atributo de instancia
+        self.saldo = saldo
+        Banco.cuentas_creadas += 1
+
+    # --------------------------
+    # Método de instancia
+    # --------------------------
+    def depositar(self, cantidad):
+        self.saldo += cantidad
+        return f"{self.titular} ha depositado {cantidad}. Nuevo saldo: {self.saldo}"
+
+    # --------------------------
+    # Método de clase
+    # --------------------------
+    @classmethod
+    def total_cuentas(cls):
+        return f"Se han creado {cls.cuentas_creadas} cuentas en el banco."
+
+    # --------------------------
+    # Método estático
+    # --------------------------
+    @staticmethod
+    def convertir_moneda(monto, tasa):
+        """Convierte monto según una tasa (ej: de USD a COP)."""
+        return monto * tasa
