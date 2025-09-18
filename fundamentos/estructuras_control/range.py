@@ -13,19 +13,19 @@ Eficiencia de memoria:
 
 Características principales:
 -----------------------------
-- Es inmutable: sus valores no se pueden cambiar una vez creado.
-- Se puede acceder a sus elementos por índice (como una lista).
-- Admite slicing (subsecuencias).
+- Es inmutable: no se pueden cambiar sus valores una vez creado.
+- Se puede acceder a sus elementos por índice (como una lista): `rango[0]`, `rango[-1]`
+- Admite slicing (subsecuencias): `rango[2:5]`
 - Soporta índices negativos para recorrer desde el final.
 
 Sintaxis y parámetros:
 -----------------------
 range(start, stop, step)
 
-- start (inicio) → valor inicial de la secuencia. Por defecto es 0 si se omite.
-- stop (fin) → valor donde se detiene la secuencia (no incluido).
-- step (salto) → incremento o decremento entre números. Por defecto es 1.
-  - Si es negativo, genera una secuencia decreciente.
+- start (inicio) → número desde donde empieza la secuencia (por defecto 0).
+- stop (fin) → número donde termina la secuencia (¡no incluido!).
+- step (salto) → cuánto aumenta o disminuye cada vez (por defecto 1).
+  - Si es negativo, la secuencia va hacia atrás.
 
 Ventaja frente a list o tuple:
 -------------------------------
@@ -95,3 +95,22 @@ print(list(rango_3))  # Salida: [1, 4, 7]
 # que esa variable no se utilizará.
 for _ in range(5):
     print("Mayer")
+
+# Ejemplo 11: Recorrer una lista y un string en reversa
+# -----------------------------------------------------
+# range(inicio, fin_exclusivo, paso)
+# En este caso:
+# - inicio = len(lista) - 1 → último índice
+# - fin_exclusivo = -1 → porque queremos incluir el índice 0
+# - paso = -1 → vamos de atrás hacia adelante
+
+lista = [1, 2, 3, 4, 5]
+print("Recorriendo lista en reversa con range(): ")
+for i in range(len(lista) - 1, -1, -1):
+    print(f"Elemento: {lista[i]}")
+
+# Recorriendo un string en reversa
+cadena = "Python"
+print("Recorriendo cadena en reversa con range(): ")
+for i in range(len(cadena) - 1, -1, -1):
+    print(f"Letra: {cadena[i]}")
