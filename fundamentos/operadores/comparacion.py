@@ -5,7 +5,7 @@ Estos operadores se usan para comparar dos valores.
 El resultado de una comparación siempre es un valor booleano: `True` o `False`.
 
 También puedes encadenar varias comparaciones en una sola expresión.
-Python evaluará cada comparación en orden y solo devolverá `True` si **todas** son verdaderas.
+Python evaluará cada comparación en orden y solo devolverá `True` si todas son verdaderas.
 
 Ejemplos:
 ---------

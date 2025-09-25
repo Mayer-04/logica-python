@@ -47,4 +47,4 @@ print(2 % 2)  # Salida: 0
 print("2" + "2")  # Salida: "22"
 
 # Repetición
-print("1" * 2)  # Salida: "11"
+print("1" * 3)  # Salida: "111"

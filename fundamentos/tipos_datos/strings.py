@@ -29,8 +29,8 @@ Algunas características de las cadenas:
 9. Iteración sobre cadenas
 10. Métodos comunes de cadenas
 
-📌 Notas:
-----------
+Notas:
+-------
 - Índices comienzan en 0.
 - El segundo valor en slicing (`inicio:fin`) es excluyente (no se incluye).
 - El tercer valor en slicing (`inicio:fin:paso`) indica el paso.
@@ -51,7 +51,7 @@ print('Python')
 print("An" "dres")  # Salida: "Andres"
 
 # Crear una cadena con salto de línea
-# Las cadenas de varias líneas se pueden crean usando comillas triples.
+# Las cadenas de varias líneas se pueden crean usando comillas triples
 apellido = """chaves"""
 print(apellido)
 print(
@@ -71,12 +71,12 @@ print("Python " + "es un lenguaje de programación")
 print("Python " * 3)
 
 # Secuencias de escape
-# `\n` se usa para un salto de línea, y `\t` para tabulación.
+# `\n` se usa para un salto de línea, y `\t` para tabulación
 print("Python\nes un lenguaje de programación")
 print("Python\tes un lenguaje de programación")
 
 # Longitud de una cadena
-# La función `len()` devuelve el número de caracteres en una cadena.
+# La función `len()` devuelve el número de caracteres en una cadena
 print(len("Python"))
 
 """
@@ -107,6 +107,33 @@ print("Mi nombre es {}, tengo {} años y estoy {}".format(name, age, active))
 
 # Formatear con f-strings (interpolación de variables)
 print(f"Mi nombre es {name}, tengo {age} años y estoy {active}")
+
+"""
+Formateo numérico con f-strings:
+--------------------------------
+El formato `.f` dentro de una f-string se usa para mostrar números flotantes con una cantidad específica
+de decimales.
+
+Sintaxis:
+---------
+f"{valor:.2f}"
+"""
+
+precio = 3.14159
+
+# Mostrar con 2 decimales
+print(f"Precio con 2 decimales: {precio:.2f}")  # Salida: 3.14
+
+# Mostrar con 4 decimales
+print(f"Precio con 4 decimales: {precio:.4f}")  # Salida: 3.1416
+
+# Alinear a la derecha con 10 espacios
+print(f"Precio alineado: {precio:10.2f}")  # Salida:        3.14
+
+# Mostrar porcentaje con 1 decimal
+porcentaje = 0.875
+print(f"Porcentaje: {porcentaje:.1%}")  # Salida: Porcentaje: 87.5%
+
 
 # ------------------------------------
 # * Expresiones dentro de un f-string
@@ -183,7 +210,7 @@ print(nombre.startswith("A"))  # True – ¿Empieza con 'A'?
 print(nombre.endswith("s"))  # True – ¿Termina con 's'?
 print(nombre.count("e"))  # 1 – ¿Cuántas veces aparece 'e'?
 print(nombre.find("d"))  # 1 – Índice de 'd' o -1 si no existe
-# print(nombre.index("z"))        # ❌ ValueError si no se encuentra
+# print(nombre.index("z"))        # ValueError si no se encuentra
 
 # Transformaciones de formato
 print(nombre.upper())  # 'ANDRES' – Todo en mayúsculas
@@ -201,14 +228,14 @@ print(
     "   Python  ".strip()
 )  # 'Python' – Elimina espacios al inicio y final y devuelve una copia limpia de la cadena
 
-# El método `split()` divide una cadena en una lista de substrings, usando un delimitador.
+# El método `split()` divide una cadena en una lista de substrings, usando un delimitador
 print("Python es genial".split())  # ['Python', 'es', 'genial'] – Divide por espacios
 
 # Reemplazo
 print(nombre.replace("e", "a"))  # 'Andras' – Reemplaza 'e' por 'a'
 
 # Unión de cadenas
-# El método `join()` une los elementos de una lista (u otro iterable) en una sola cadena, usando un delimitador.
+# El método `join()` une los elementos de una lista (u otro iterable) en una sola cadena, usando un delimitador
 palabras = ["Python", "es", "genial"]
 print(" ".join(palabras))  # 'Python es genial' – Une con espacios
 print("-".join(palabras))  # 'Python-es-genial' – Une con guiones

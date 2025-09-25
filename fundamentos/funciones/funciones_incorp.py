@@ -5,7 +5,8 @@ Las funciones incorporadas en Python son aquellas que ya vienen definidas dentro
 Estas funciones permiten realizar diversas operaciones como manipular datos, efectuar cálculos matemáticos,
 interactuar con el usuario, etc.
 
-✅ Estas funciones son usadas sin necesidad de importar módulos adicionales.
+Estas funciones están disponibles de forma nativa en Python,
+por lo que no requieren importar módulos adicionales.
 """
 
 # Función incorporada `print()`

@@ -42,8 +42,8 @@ Consideraciones:
 - Memoria: Más eficientes en términos de memoria.
 - Funcional: Estilo de programación más funcional y declarativo.
 
-💡 Buenas prácticas:
----------------------
+Buenas prácticas:
+------------------
 - Mantén las expresiones simples y legibles.
 - Usa nombres de variables descriptivos.
 - Para lógica compleja, considera usar `funciones auxiliares`.

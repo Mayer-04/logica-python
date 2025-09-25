@@ -17,24 +17,17 @@ elemento not in secuencia
 """
 
 # Es como decir: ¿El número 2 está presente en la lista?
-print(2 in [1, 2, 3])  # Imprime True
-print(4 in [1, 2, 3])  # Imprime False
+print(2 in [1, 2, 3])  # Salida: True
+print(4 in [1, 2, 3])  # Salida: False
 
-texto = "Python"
-print("y" in texto)  # True, la letra 'y' está en el texto
-print("z" in texto)  # False, la letra 'z' no está en el texto
+lenguaje = "Python"
+print("y" in lenguaje)  # True, la letra 'y' está en lenguaje
+print("z" in lenguaje)  # False, la letra 'z' no está en lenguaje
 
 # Operador `not in`
 # Es como decir: ¿El número 3 no está presente en la lista?
-print(3 not in [1, 2, 4, 5])  # Imprime True
-print(5 not in [1, 2, 4, 5])  # Imprime False
+print(3 not in [1, 2, 4, 5])  # Salida: True
+print(5 not in [1, 2, 4, 5])  # Salida: False
 
-# Se crea una lista con elementos enteros
-numbers = [1, 2, 3, 4, 5, 6]
-
-# Verificar si un elemento está presente en la lista
-print(1 in numbers)  # Imprime True
-print(5 in numbers)  # Imprime False
-
-
-print(3 in 3)  # Imprime un error: El argumento de tipo `int` no es iterable.
+# Operador `in` con un argumento de tipo `int`
+print(3 in 3)  # Salida: un error: El argumento de tipo `int` no es iterable.

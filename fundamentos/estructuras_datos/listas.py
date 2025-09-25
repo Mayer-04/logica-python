@@ -32,7 +32,7 @@ Implementación interna:
   - `dict` (diccionario, si los elementos son pares clave-valor)
   - `str` (cadena, si todos los elementos son cadenas)
 
-⚠️ IMPORTANTE: Referencias vs Copias
+IMPORTANTE: Referencias vs Copias
 - Asignar una lista a otra variable crea una referencia, NO una copia.
 - Para crear copias usar: `lista.copy()`, `list(lista)` o `lista[:]`.
 

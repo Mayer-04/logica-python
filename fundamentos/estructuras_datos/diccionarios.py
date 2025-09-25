@@ -4,7 +4,7 @@
 Un diccionario es una estructura de datos que almacena información en pares `clave-valor`.
 Es ideal para representar relaciones entre elementos.
 
-📝 NOTAS:
+NOTAS:
 - Las claves en un diccionario deben ser únicas e inmutables (por ejemplo: strings, números, tuplas).
 - Los valores pueden ser de cualquier tipo de dato (incluso otros diccionarios).
 
@@ -153,6 +153,19 @@ print(nested_dict.keys())  # Salida dict_keys(['a', 'b', 'c'])
 print(nested_dict.values())  # Salida dict_values([1, 2, {'d': 4}])
 print(nested_dict.items())  # Salida dict_items([('a', 1), ('b', 2), ('c', {'d': 4})])
 
+# pop()
+# Elimina una clave y devuelve su valor
+dic = {"a": 1, "b": 2}
+valor = dic.pop("b")
+print("pop:", dic)  # Salida {'a': 1}
+
+# update()
+# Añade o actualiza pares clave-valor desde otro diccionario
+d1 = {"a": 1}
+d2 = {"b": 2, "c": 3}
+d1.update(d2)
+print("update:", d1)  # Salida {'a': 1, 'b': 2, 'c': 3}
+
 # setdefault()
 # Devuelve el valor de la clave si existe
 # Si no existe, la crea con un valor por defecto y lo devuelve
@@ -170,19 +183,6 @@ print("copy:", copia)  # Salida {'a': 1, 'b': 2}
 keys = ["a", "b", "c"]
 nuevo_dic = dict.fromkeys(keys, 0)
 print("fromkeys:", nuevo_dic)  # Salida {'a': 0, 'b': 0, 'c': 0}
-
-# pop()
-# Elimina una clave y devuelve su valor
-dic = {"a": 1, "b": 2}
-valor = dic.pop("b")
-print("pop:", dic)  # Salida {'a': 1}
-
-# update()
-# Añade o actualiza pares clave-valor desde otro diccionario
-d1 = {"a": 1}
-d2 = {"b": 2, "c": 3}
-d1.update(d2)
-print("update:", d1)  # Salida {'a': 1, 'b': 2, 'c': 3}
 
 # Desempaquetado con **
 # Desempaquetar: Significa extraer los elementos de una colección (lista, tupla, diccionario, etc.)
