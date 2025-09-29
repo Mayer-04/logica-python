@@ -1,0 +1,54 @@
+{
+  "animales_aleatorios": [
+    {
+      "id": 1,
+      "nombre": "Zara",
+      "especie": "Jirafa",
+      "edad": 8,
+      "habitat": "Sabana africana",
+      "peso_kg": 850,
+      "altura_metros": 4.2,
+      "dieta": "Herbívoro"
+    },
+    {
+      "id": 2,
+      "nombre": "Neptune",
+      "especie": "Delfín nariz de botella",
+      "edad": 12,
+      "habitat": "Océano Atlántico",
+      "peso_kg": 275,
+      "altura_metros": 3.1,
+      "dieta": "Carnívoro"
+    },
+    {
+      "id": 3,
+      "nombre": "Kimba",
+      "especie": "Tigre de Bengala",
+      "edad": 6,
+      "habitat": "Selvas de India",
+      "peso_kg": 180,
+      "altura_metros": 1.0,
+      "dieta": "Carnívoro"
+    },
+    {
+      "id": 4,
+      "nombre": "Ruby",
+      "especie": "Tucán toco",
+      "edad": 4,
+      "habitat": "Selva amazónica",
+      "peso_kg": 0.65,
+      "altura_metros": 0.63,
+      "dieta": "Omnívoro"
+    },
+    {
+      "id": 5,
+      "nombre": "Boulder",
+      "especie": "Tortuga galápagos",
+      "edad": 95,
+      "habitat": "Islas Galápagos",
+      "peso_kg": 220,
+      "altura_metros": 0.8,
+      "dieta": "Herbívoro"
+    }
+  ]
+}
