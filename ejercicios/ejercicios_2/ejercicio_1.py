@@ -7,23 +7,15 @@ area = (cateto1 * cateto2) / 2
 
 
 def calcular_area_triangulo(primer_cateto: float, segundo_cateto: float) -> float:
-    """
-    Calcula el área de un triángulo rectángulo dado sus catetos.
-
-    La fórmula es: area = (cateto1 * cateto2) / 2
-
-    Argumentos:
-    primer_cateto (float): Longitud del primer cateto.
-    segundo_cateto (float): Longitud del segundo cateto.
-
-    Retorna:
-    float: El área del triángulo rectángulo.
-    """
     if primer_cateto <= 0 or segundo_cateto <= 0:
-        raise ValueError("Ambos catetos deben ser valores positivos")
+        raise ValueError("Ambos catetos deben ser positivos")
 
     return (primer_cateto * segundo_cateto) / 2
 
 
-area = calcular_area_triangulo(5, 6)
-print(area)
+try:
+    area = calcular_area_triangulo(5, 6)
+except ValueError as e:
+    print(f"Error al calcular el área: {e}")
+else:
+    print(f"El área del triángulo es: {area}")

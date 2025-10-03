@@ -297,14 +297,13 @@ Escribe una función que encuentre todas las parejas de números en una lista cu
 **Requisitos:**
 
 - No repetir parejas invertidas (si incluyes (2,7), no incluyas (7,2))
-- No usar el mismo elemento consigo mismo
 - Devolver una lista de tuplas con las parejas encontradas
 
 **Ejemplo:**
 
 ```python
-buscar_parejas([2, 4, 3, 7, 5, 1], 9)
-# Resultado: [(2, 7), (4, 5)]
+buscar_parejas([2, 4, 3, 7, 5], 9)
+# Resultado: [(2, 7), (4, 5)] -> 2 + 7 = 9 y 4 + 5 = 9
 ```
 
 ## Ejercicio 24: Copia de la primera mitad de una lista
@@ -387,22 +386,22 @@ numeros = [5, -10, -2, 25, -7, 3]
 
 ## Ejercicio 29: Palabras más largas que el índice
 
-Escribe una función que reciba una lista de palabras y una palabra específica, luego:
+Escribe una función que reciba una lista de palabras y una palabra específica. La función debe:
 
-1. Encuentre el índice de la palabra específica en la lista
-2. Devuelva una nueva lista con las palabras cuya longitud sea mayor que ese índice
+1. Encontrar el índice de la palabra específica dentro de la lista.
+2. Crear y devolver una nueva lista que contenga las palabras cuya longitud sea mayor que ese índice.
 
 **Consideraciones:**
 
-- Si la palabra no existe en la lista, devolver lista vacía
-- El índice se cuenta desde 0
+- Si la palabra no existe en la lista, la función debe devolver una lista vacía.
+- Los índices comienzan desde 0.
 
 **Ejemplo:**
 
 ```python
 palabras = ["sol", "luna", "estrella", "planeta"]
 palabra_buscar = "luna"  # índice = 1
-# Palabras con longitud > 1: ["luna", "estrella", "planeta"]
+# Palabras con longitud > 1 → ["luna", "estrella", "planeta"]
 ```
 
 ## Ejercicio 30: Orden ascendente y descendente
