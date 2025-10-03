@@ -74,43 +74,66 @@ for element in new_set:
 new_set.clear()
 print(new_set)  # Salida: set()
 
-# ------------------------------
+# -------------------------------
 # * Operaciones entre conjuntos
-# ------------------------------
+# -------------------------------
 
-set1 = {1, 2, 3}
-set2 = {3, 4, 5}
+set_1 = {1, 2, 3}
+set_2 = {3, 4, 5}
 
-# Unión: todos los elementos de ambos conjuntos (sin duplicados)
-union_set = set1.union(set2)
+# ------------------
+# * Unión
+# ------------------
+
+# Combina los elementos de ambos conjuntos, eliminando duplicados
+union_set = set_1.union(set_2)
 print(union_set)  # Salida: {1, 2, 3, 4, 5}
 
-# Unión utilizando el operador |
-union_operator_set = set1 | set2
+# Unión utilizando el operador "|"
+union_operator_set = set_1 | set_2
 print("union_operator_set:", union_operator_set)  # Salida: {1, 2, 3, 4, 5}
 
-# Intersección: elementos comunes
-print(set1 & set2)  # Salida: {3}
-print(set1.intersection(set2))  # Salida: {3}
+# -----------------
+# * Intersección
+# -----------------
 
-# Realizar la intersección de dos sets
-intersection_set = set1.intersection(set2)
+# Obtiene solo los elementos que están en los dos conjuntos
+intersection_set = set_1.intersection(set_2)
 print(intersection_set)  # Salida: {3}
 
-# Verificar si un set es subconjunto de otro
-subset_set = {1, 2}
-print(subset_set.issubset(set1))  # Salida: True
+# Intersección utilizando el operador "&"
+print(set_1 & set_2)  # Salida: {3}
 
-# Verificar si un set es superconjunto de otro
-print(set1.issuperset(subset_set))  # Salida: True
+# ------------------
+# * Diferencia
+# ------------------
 
-# Diferencia entre dos sets (elementos presentes en set1 pero no en set2)
-difference_set = set1.difference(set2)
+# Elementos que están en set1 pero no en set2
+difference_set = set_1.difference(set_2)
 print(difference_set)  # Salida: {1, 2}
 
-# Diferencia simétrica entre dos sets (elementos presentes en set1 o en set2 pero no en ambos)
-symmetric_difference_set = set1.symmetric_difference(set2)
+# Usando el operador "-"
+print(set_1 - set_2)  # Salida: {1, 2}
+
+# --------------------------
+# * Diferencia simétrica
+# --------------------------
+
+# Elementos que están en set1 o en set2, pero no en ambos
+symmetric_difference_set = set_1.symmetric_difference(set_2)
 print(symmetric_difference_set)  # Salida: {1, 2, 4, 5}
+
+# Diferencia simétrica utilizando el operador "^"
+print(set_1 ^ set_2)  # Salida: {1, 2, 4, 5}
+
+# Verificar si un conjunto es subconjunto de otro
+# (Es decir, si todos sus elementos están dentro del otro conjunto)
+subset_set = {1, 2}
+print(subset_set.issubset(set_1))  # Salida: True
+
+# Verificar si un conjunto es superconjunto de otro
+# (Es decir, si contiene todos los elementos del otro conjunto)
+print(set_1.issuperset(subset_set))  # Salida: True
 
 # frozenset: conjunto inmutable (no se puede modificar)
 immutable_set = frozenset([1, 2, 3, 4])
