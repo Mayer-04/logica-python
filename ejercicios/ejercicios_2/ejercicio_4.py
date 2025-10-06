@@ -11,15 +11,32 @@ numeros = [45, 23, 78, 12, 90, 5]
 # La función debe devolver: (90, 5)
 """
 
-
-def obtener_numero_mayor(numeros: list[int]) -> int:
-    numero_mayor = numeros[0]
-
-    for numero in numeros:
-        if numero_mayor < numero:
-            numero_mayor = numero
-
-    return numero_mayor
+numero_mayor = lambda nums: max(nums)
+numero_menor = lambda nums: min(nums)
 
 
-print(obtener_numero_mayor([45, 23, 78, 12, 90, 5]))
+def obtener_num_mayor_menor(numeros: list[int]) -> tuple[int, int]:
+    return (numero_mayor(numeros), numero_menor(numeros))
+
+
+def obtener_num_mayor_menor_2(numeros: list[int]) -> tuple[int, int]:
+    return max(numeros), min(numeros)
+
+
+def obtener_num_mayor_menor_3(numeros: list[int]) -> tuple[int, int]:
+    mayor = numeros[0]
+    menor = numeros[0]
+
+    actualizar_mayor = lambda actual, nuevo: nuevo if nuevo > actual else actual
+    actualizar_menor = lambda actual, nuevo: nuevo if nuevo < actual else actual
+
+    for num in numeros[1:]:
+        mayor = actualizar_mayor(mayor, num)
+        menor = actualizar_menor(menor, num)
+
+    return (mayor, menor)
+
+
+print(obtener_num_mayor_menor([45, 23, 78, 12, 90, 5]))
+print(obtener_num_mayor_menor_2([45, 23, 78, 12, 90, 5]))
+print(obtener_num_mayor_menor_3([45, 23, 78, 12, 90, 5]))
