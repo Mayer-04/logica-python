@@ -1,5 +1,5 @@
 """
-* Scope - (Ámbito o Alcance)
+* Scope: (Ámbito o Alcance)
 -----------------------------
 El scope en Python define `dónde` una variable o función puede ser accedida dentro del código.
 
@@ -27,14 +27,14 @@ en el nivel más alto de un script, son accesibles desde cualquier parte del có
 - Se refiere a los nombres que Python tiene incorporados por defecto, como `print()`, `len()`, etc.
 - Python buscará aquí solo si no encuentra la variable en ninguno de los scopes anteriores.
 
-⚠️ Importante:
----------------
-- Las estructuras de control como `if`, `for`, y `while` `no crean` un nuevo scope en Python.
+Importante:
+------------
+- Las estructuras de control como `if`, `for`, y `while` NO crean un nuevo scope en Python.
 - Las variables definidas dentro de ellas `pertenecen al mismo scope` en el que están contenidas.
 """
 
-# 1. Scope Global
-# ---------------
+# Scope Global
+# --------------
 numero = 10  # Esta variable está en el ámbito global (variable global)
 
 
@@ -46,7 +46,7 @@ def funcion_global():
 funcion_global()  # Salida: 10
 
 
-# 2. Scope Local
+# Scope Local
 # --------------
 def funcion_local():
     y = 20  # 'y' solo existe dentro de esta función (scope local)
@@ -55,10 +55,10 @@ def funcion_local():
 
 funcion_local()  # Salida: 20
 
-# print(y)  # ❌ Esto genera un error porque 'y' no existe fuera de la función
+# print(y)  # Esto genera un error porque 'y' no existe fuera de la función
 
 
-# 3. Scope Enclosing
+# Scope Enclosing
 # ------------------
 # Una función dentro de otra puede acceder a variables del scope "enclosing" (función externa)
 def funcion_externa():
@@ -74,7 +74,7 @@ def funcion_externa():
 funcion_externa()  # Salida: 30
 
 
-# 4. Ámbito Built-in y orden de resolución de nombres (LEGB)
+# Ámbito Built-in y orden de resolución de nombres (LEGB)
 # -----------------------------------------------------------
 # 1. Local: Dentro de la función actual
 # 2. Enclosing: En funciones anidadas (no aplica aquí)
@@ -84,17 +84,17 @@ funcion_externa()  # Salida: 30
 # Ejemplo: 'len' es una función built-in
 print(len([1, 2, 3]))  # Salida: 3
 
-# ⚠️ Redefinir 'len' en el ámbito global sobrescribe la función built-in
+# Redefinir 'len' en el ámbito global sobrescribe la función built-in
 len = "Esto ya no es la función len"  # Ahora 'len' es una variable global tipo str
 
 # Ahora 'len' ya no es la función, sino una cadena
 print(len)  # Salida: Esto ya no es la función len
 
 # Intentar usar 'len' como función ahora genera un error
-# print(len([1, 2, 3]))  # ❌ TypeError: 'str' object is not callable
+# print(len([1, 2, 3]))  # TypeError: 'str' object is not callable
 
 
-# 5. Ámbito (Scope) y estructuras de control
+# Ámbito (Scope) y estructuras de control
 # ------------------------------------------
 # En Python, las estructuras de control como `for`, `if` y `while` NO crean un nuevo scope.
 # Esto significa que las variables definidas dentro de estas estructuras siguen perteneciendo al mismo ámbito externo.
