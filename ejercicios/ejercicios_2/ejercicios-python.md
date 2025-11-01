@@ -569,3 +569,160 @@ lista1 = [1, 2, 3, 2]
 lista2 = [3, 4, 5, 1]
 # Resultado: [1, 2, 3, 4, 5]
 ```
+
+---
+
+## Ejercicio 43: Contar vocales y consonantes
+
+Escribe una función que reciba una cadena de texto y devuelva un diccionario con la cantidad de vocales y consonantes que contiene.
+
+**Ejemplo:**
+
+```python
+texto = "Programación"
+# Resultado: {'vocales': 5, 'consonantes': 7}
+```
+
+## Ejercicio 44: Eliminar palabras cortas
+
+Escribe una función que reciba una lista de palabras y un número entero `n`, y devuelva una nueva lista con las palabras cuya longitud sea `mayor que n`.
+
+**Ejemplo:**
+
+```python
+palabras = ["sol", "computadora", "luna", "python"]
+n = 4
+# Resultado: ["computadora", "python"]
+```
+
+## Ejercicio 45: Suma diagonal de una matriz
+
+Dada una matriz cuadrada (lista de listas), calcula la suma de los elementos de su `diagonal principal`.
+
+**Ejemplo:**
+
+```python
+matriz = [
+    [2, 5, 7],
+    [4, 3, 9],
+    [6, 1, 8]
+]
+# Diagonal: 2 + 3 + 8 = 13
+# Resultado: 13
+```
+
+## Ejercicio 46: Reemplazar vocales
+
+Escribe un programa que reciba una cadena y reemplace todas las vocales por el símbolo `*`.
+
+**Ejemplo:**
+
+```python
+texto = "Hola mundo"
+# Resultado: "H*l* m*nd*"
+```
+
+## Ejercicio 47: Promedio de columnas en una matriz
+
+Crea una función que reciba una matriz de números y devuelva una lista con el promedio de cada columna.
+
+**Ejemplo:**
+
+```python
+matriz = [
+    [2, 4, 6],
+    [1, 3, 5],
+    [7, 9, 11]
+]
+# Promedios por columna: [3.33, 5.33, 7.33]
+```
+
+## Ejercicio 48: Reorganizar palabras por longitud
+
+Crea una función que reciba una frase y devuelva una lista con las palabras ordenadas por su longitud, de menor a mayor.
+Si dos palabras tienen la misma longitud, mantener el orden original.
+
+**Ejemplo:**
+
+```python
+frase = "Python es un lenguaje poderoso y elegante"
+# Resultado: ['un', 'es', 'y', 'Python', 'poderoso', 'lenguaje', 'elegante']
+```
+
+## Ejercicio 49: Diccionario de índices
+
+Dada una lista, crea un diccionario donde las claves sean los elementos y los valores sean listas con los índices donde aparece cada elemento.
+
+**Ejemplo:**
+
+```python
+lista = ['a', 'b', 'a', 'c', 'b', 'a']
+# Resultado: {'a': [0, 2, 5], 'b': [1, 4], 'c': [3]}
+```
+
+## Ejercicio 50: Reemplazar duplicados con contador
+
+Dada una lista, reemplaza los elementos duplicados agregando un número incremental al final para diferenciarlos.
+
+**Ejemplo:**
+
+```python
+lista = ["python", "java", "python", "c", "java"]
+# Resultado: ["python", "java", "python_2", "c", "java_2"]
+```
+
+## Ejercicio 51: Promedio por categoría
+
+Tienes un diccionario donde las claves son categorías y los valores son listas de números.
+Devuelve un nuevo diccionario con el promedio de cada categoría.
+
+**Ejemplo:**
+
+```python
+datos = {
+    "math": [4, 5, 3],
+    "science": [5, 5, 4],
+    "english": [3, 4, 4]
+}
+# Resultado: {'math': 4.0, 'science': 4.67, 'english': 3.67}
+```
+
+## Ejercicio 52: Combinar nombres y edades
+
+Tienes dos listas, una de nombres y otra de edades.
+Crea un diccionario que relacione cada nombre con su edad, ignorando los sobrantes si las listas tienen longitudes diferentes.
+
+**Ejemplo:**
+
+```python
+nombres = ["Ana", "Luis", "Carlos"]
+edades = [20, 25]
+# Resultado: {'Ana': 20, 'Luis': 25}
+```
+
+## Ejercicio 53: Eliminar valores None de un diccionario
+
+Dado un diccionario con posibles valores `None`, devuelve uno nuevo sin esos pares clave-valor.
+
+**Ejemplo:**
+
+```python
+datos = {'nombre': 'Ana', 'edad': None, 'pais': 'Colombia'}
+# Resultado: {'nombre': 'Ana', 'pais': 'Colombia'}
+```
+
+## Ejercicio 54: Suma en forma de zigzag
+
+Dada una matriz numérica rectangular, suma los elementos en zigzag:
+Primera fila izquierda→derecha, segunda fila derecha→izquierda, tercera izquierda→derecha, etc.
+
+**Ejemplo:**
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+# Zigzag: 1+2+3+6+5+4+7+8+9 = 45
+```
